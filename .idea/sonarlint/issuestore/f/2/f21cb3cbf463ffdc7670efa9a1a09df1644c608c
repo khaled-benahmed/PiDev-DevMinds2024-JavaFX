@@ -1,0 +1,35 @@
+
+	java:S112d"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÿ¡µ¶î1J$b3ab5c8e-7060-4e0b-9704-6b8b76d8c1b1
+‹
+java:S1192u"HDefine a constant instead of duplicating this literal "WARNING" 7 times.(‹¸ı8‚¢µ¶î1J$2578aa5c-08b7-4238-b8c8-ad9720c83fda
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¸ş†‹ÿÿÿÿÿ8ˆ¢µ¶î1J$4f5998ce-dc6e-4d96-82ad-4e29ad765c19
+
+java:S3655_"LCall "result.isPresent()" or "!result.isEmpty()" before accessing the value.(ÃÇûŞ8Å¢µ¶î1J$f7882a85-f774-40b4-a485-367f7b0bc0f6
+
+java:S3655"LCall "result.isPresent()" or "!result.isEmpty()" before accessing the value.(ÃÇûŞ8”¡¸¶î1J$6ccdc65f-d677-4193-be7f-14b50e9e10a5
+–	java:S116"TRename this field "ListPromo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”§8Ç¢µ¶î1J$7d331e4c-77e6-4cba-9237-8f3264c26a02
+™	java:S116"RRename this field "BtnSupp" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ù›üÿÿÿÿ8Ç¢µ¶î1J$f24560bd-6178-453d-b567-3995ca48a5e8
+–	java:S116"TRename this field "BtnRetour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õßªô8Ç¢µ¶î1J$7ab6f233-e740-418f-98b4-17bddfb89e25
+›	java:S116 "TRename this field "HboxModif" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…–‹¦ùÿÿÿÿ8Ç¢µ¶î1J$c80977ca-14af-4e44-8ffe-60607eff86c6
+œ	java:S116$"URename this field "BtnAnnuler" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬³¯»ÿÿÿÿÿ8Ç¢µ¶î1J$1ccaaa5a-2965-4975-9a52-340576763b65
+—	java:S116&"URename this field "BtnAjouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÜË8Ç¢µ¶î1J$51db2f2a-b235-419d-9d9d-34328419527d
+•	java:S100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êïíùÿÿÿÿ8Õ¢µ¶î1J$9d525aa2-5b48-4b67-b9fa-9f6468d44ca6
+•	java:S100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÂœîüÿÿÿÿ8Ø¢µ¶î1J$f5b36c11-5a2d-4e4f-8508-3d88314c5b33
+	java:S100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ïˆí8Û¢µ¶î1J$3b9f56b7-c471-48a8-8f69-7806d16d98aa
+	java:S100p"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å½Ú¡8â¢µ¶î1J$89c465dd-54b4-450e-98eb-b3385f405520
+~
+java:S6353z"<Use concise character class syntax '\\d' instead of '[0-9]'.(§ÔÎC8æ¢µ¶î1J$5b6f9ac7-9973-4733-9634-649701133d9a
+~
+java:S6353z"<Use concise character class syntax '\\d' instead of '[0-9]'.(§ÔÎC8ç¢µ¶î1J$218a2a92-a4ec-46c2-9bb4-4c098782cb1e
+~
+java:S6353z"<Use concise character class syntax '\\d' instead of '[0-9]'.(§ÔÎC8ç¢µ¶î1J$c9964882-e7b6-4076-9cef-cbb5aa05b285
+‘	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿æ§Ö8ë¢µ¶î1J$3911acf2-41eb-44df-be08-2bcfb897fe0e
+–	java:S100¤"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÜÙƒşÿÿÿÿ8ì¢µ¶î1J$a65eea9c-7f4d-43bf-ba74-7a94da7017cb
+›
+java:S3776¤"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(’ÜÙƒşÿÿÿÿ8î¢µ¶î1J$9249de57-6c05-496f-b51c-b204a32d8fe9
+
+java:S6353¯"<Use concise character class syntax '\\d' instead of '[0-9]'.(§ÔÎC8ğ¢µ¶î1J$efea68a8-9bb0-46e1-b643-1262bf663071
+
+java:S6353¯"<Use concise character class syntax '\\d' instead of '[0-9]'.(§ÔÎC8ğ¢µ¶î1J$0a60e9f1-644a-4471-84cf-e734757c4ae1
+
+java:S6353¯"<Use concise character class syntax '\\d' instead of '[0-9]'.(§ÔÎC8ğ¢µ¶î1J$be8c7d62-cf15-4dac-91c2-404a9610298c

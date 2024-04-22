@@ -1,0 +1,28 @@
+.promotion-card {
+    -fx-background-color: #fff; /* Light white background */
+    -fx-border-radius: 5; /* Rounded corners */
+    -fx-padding: 15; /* Padding around content */
+
+}
+
+.promotion-card > * { /* Target all child elements within the card */
+    -fx-margin-bottom: 5; /* Spacing between elements */
+}
+
+.promo-code,
+.discount-value,
+.expiration-date {
+    -fx-font-size: 14px;
+}
+
+.promo-code {
+    -fx-font-weight: bold; /* Bold text for code */
+}
+
+.discount-value {
+    -fx-text-fill: #333; /* Text color for discount */
+}
+
+.expiration-date {
+    -fx-font-style: italic; /* Italic text for expiration */
+}

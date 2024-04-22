@@ -1,0 +1,12 @@
+controllers\FrontOffice\FrontOfficeHomeController.class
+controllers\FrontOffice\ListPromoFrontController.class
+controllers\FrontOffice\AjouterOffreController.class
+controllers\FrontOffice\ListSponsorFrontController.class
+controllers\BackOffice\ListPromoController.class
+controllers\BackOffice\ListSponsorController.class
+controllers\BackOffice\ListOffreController$1.class
+controllers\BackOffice\ListOffreController.class
+controllers\BackOffice\ListSponsorController$1.class
+controllers\FrontOffice\AjouterSponsorController.class
+controllers\FrontOffice\ListOffreFrontController.class
+controllers\BackOffice\ListPromoController$1.class

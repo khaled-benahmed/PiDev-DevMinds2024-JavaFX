@@ -1,0 +1,12 @@
+
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Èí³Áøÿÿÿÿ8Îø…Ãé1J$4a657370-944f-4d1d-9172-c8217662102f
+˜	java:S116"VRename this field "BtnGoOffres" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´‘‘È8Õø…Ãé1J$2ce26831-57f9-47a8-b0ed-1478ef65bcb0
+œ	java:S116"ZRename this field "BtnGoAjoutOffre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ÁŸ¸8Õø…Ãé1J$dc2e5aa4-3ef0-4b7f-8343-ea582cc6a388
+œ	java:S116"URename this field "BtnGoPromo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”ƒñÿıÿÿÿÿ8Õø…Ãé1J$3be1181b-4573-4098-874a-2ad737d1314d
+Ÿ	java:S116"XRename this field "BtnGoSponsors" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãÔÇØıÿÿÿÿ8Õø…Ãé1J$643a7dce-73db-4c36-8cfe-612a7c9d0268
+š	java:S116"XRename this field "BtnAjoutPromo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çµáı8Õø…Ãé1J$73e1ae87-3bb3-479c-85c1-3ed2498080ac
+•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë•‰‹ûÿÿÿÿ8×ø…Ãé1J$787ecbaa-8a18-4586-a9b4-04c8d0ad409f
+•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹õ¹üÿÿÿÿ8Şø…Ãé1J$cbb361cc-cee8-4d1d-bf80-71cdab749d78
+•	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨üêüÿÿÿÿ8Şø…Ãé1J$0855c233-0fcd-4514-a66d-dd53fe94c796
+	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó…Íî8ßø…Ãé1J$d6d58b64-2e4d-403a-92a0-28bd86e3db25
+•	java:S100."NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÄâèüÿÿÿÿ8ßø…Ãé1J$1f6faeea-8546-4162-9f64-027c2d3f6c4e

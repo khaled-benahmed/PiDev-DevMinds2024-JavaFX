@@ -1,0 +1,20 @@
+
+”
+java:S11922"QDefine a constant instead of duplicating this literal "offre with id = " 3 times.(Şñ”Ó8úÉõ¶é1J$b2ae3aca-9aea-407d-97b5-789d826d6e92
+
+java:S20959"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8Ó¡Õ¶é1J$485f320c-5921-4f73-9889-55be37df458c
+—
+java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8‡óşÊé1J$7e9f7461-1c3f-47bf-ad01-0dfb06cfff0e
+—
+java:S2095/"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8øŒŸ¶é1J$59100e30-5c0c-48ee-8415-ba1ba52b41dd
+—
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(š û±ÿÿÿÿÿ8±²õ¶é1J$5bd8da15-7e56-4c8a-a2c2-286eb8adea5a
+—
+java:S2095""OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(š û±ÿÿÿÿÿ8Æœ˜¶é1J$fe2039d2-7095-47ea-8112-f7c8e8185ed7
+m	java:S106"+Replace this use of System.out by a logger.(Â–‘ö8®‘“¶é1J$03f421dc-7c03-49f3-8040-6fce915e04a2
+r	java:S106"+Replace this use of System.out by a logger.(éı‹Äùÿÿÿÿ8±‘“¶é1J$50e86317-6bc0-412e-8bb6-04447a01831a
+m	java:S106!"+Replace this use of System.out by a logger.(Â–‘ö8Ñœ˜¶é1J$cbbffb38-b10e-4f59-9712-6c11831b9d33
+r	java:S106)"+Replace this use of System.out by a logger.(·çÑîüÿÿÿÿ8ÌÂÃ¶é1J$0cfc4721-77e5-4457-9ca6-eac665102ef9
+m	java:S1062"+Replace this use of System.out by a logger.(Şñ”Ó8ÌÂÃ¶é1J$2fc5395a-9f7f-4b62-832d-798c626053a0
+m	java:S106S"+Replace this use of System.out by a logger.(œ¯Ë8÷÷ó¶é1J$2e038bf4-fe4e-4916-9251-9bfff56cfae8
+m	java:S106W"+Replace this use of System.out by a logger.( «Ş8÷÷ó¶é1J$efe35f30-7089-46dd-a68e-fbd79ad2c224

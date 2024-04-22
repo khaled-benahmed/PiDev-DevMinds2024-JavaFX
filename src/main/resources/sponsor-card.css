@@ -1,0 +1,22 @@
+.sponsor-card {
+    -fx-background-color: #fff;
+    -fx-border-radius: 5; /* Rounded corners */
+    -fx-padding: 20; /* Add padding around content */
+    -fx-background-radius: 20;
+
+}
+
+.sponsor-card .image-view {
+    -fx-border-radius: 50; /* Rounded corners for image */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, 2); /* Shadow for image */
+}
+
+.sponsor-card .sponsor-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.sponsor-card .donation-amount {
+    -fx-font-size: 14px;
+    -fx-color: #888;
+}

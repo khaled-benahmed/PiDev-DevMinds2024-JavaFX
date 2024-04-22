@@ -1,0 +1,50 @@
+/* Generic button styles */
+.button {
+    -fx-background-color: #720000;  /* Adjust base color */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 15 10 15;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #720000;  /* Adjust hover color */
+}
+
+/* Specific button styles (optional) */
+.add-button {
+    -fx-background-color: #720000;  /* Green for add */
+}
+.add-button:hover {
+    -fx-background-color: #720000;  /* Green for add */
+}
+
+.update-button {
+    -fx-background-color: #720000;  /* Orange for update */
+}
+.update-button:hover {
+    -fx-background-color: #720000;  /* Orange for update */
+}
+
+.delete-button {
+    -fx-background-color: #720000;  /* Red for delete */
+}
+.delete-button:hover {
+    -fx-background-color: #71170f;  /* Red for delete */
+}
+/* List view styles */
+.list-view {
+    -fx-background-color: #f5f5f5;  /* Light background */
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #333;  /* Text color */
+    -fx-padding: 10px;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #eee;  /* Hover background */
+}

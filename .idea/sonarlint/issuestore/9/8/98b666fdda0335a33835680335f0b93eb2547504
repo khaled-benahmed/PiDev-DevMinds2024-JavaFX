@@ -1,0 +1,32 @@
+
+‘
+java:S1192D"ODefine a constant instead of duplicating this literal "code_promotion" 3 times.(…³îd8ó¡–¿é1J$bbcf796c-2099-4252-99d4-657be38d10e1
+–
+java:S1192E"TDefine a constant instead of duplicating this literal "reduction_promotion" 3 times.(…	8ó¡–¿é1J$ee4289ca-4002-4506-966d-aa40dfd4b17a
+˜
+java:S1192F"PDefine a constant instead of duplicating this literal "date_expiration" 3 times.(Üï¬üÿÿÿÿ8ó¡–¿é1J$a398b339-85df-4099-9b79-f034c82b4175
+
+java:S1192G"KDefine a constant instead of duplicating this literal "sponsor_id" 3 times.(Î…j8ó¡–¿é1J$5ed6bb44-28b8-4ff6-a775-1eaa6d7561cc
+—
+java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(š û±ÿÿÿÿÿ8ÍóÜ¶é1J$a13aba1e-53a4-40b0-b430-0b9587992f9a
+—
+java:S2095d"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ÍóÜ¶é1J$6789e3f6-42ce-4c55-bc37-8b140813ebf4
+—
+java:S2095P"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8„¢–¿é1J$69f522d0-a07b-4aa8-be0d-b03b3254035d
+
+java:S2095>"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8›‹İ¶é1J$911dad0f-4314-423b-a1c2-3828b0ed5730
+—
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(š û±ÿÿÿÿÿ8á“¿é1J$9704fd51-a758-4645-b805-110fc6891579
+—
+java:S20954"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8±½ò¶é1J$dec47a82-d0fd-4867-b6ba-a7e0a6d6ec88
+m	java:S106"+Replace this use of System.out by a logger.(Â–‘ö8ÑóÜ¶é1J$adbe37a8-ace3-414e-8253-39f44dccb85d
+m	java:S106"+Replace this use of System.out by a logger.(¶Í½¨8ÑóÜ¶é1J$eaf80fd7-afcb-4963-a895-50bbbc7a8e04
+m	java:S106%"+Replace this use of System.out by a logger.(Â–‘ö8ÒóÜ¶é1J$f6eebe74-bba3-4ad0-95ec-a2b8da03c414
+r	java:S106-"+Replace this use of System.out by a logger.(‡Éøøùÿÿÿÿ8ÓóÜ¶é1J$13432899-d0be-4730-8429-e763bb1aa45e
+m	java:S1067"+Replace this use of System.out by a logger.(½‹°Ì8ÓóÜ¶é1J$86f8d9cf-d0ea-48fd-96a9-fc1e4ccaf6a8
+r	java:S106Z"+Replace this use of System.out by a logger.(†ÀğÒşÿÿÿÿ8¤şğ¶é1J$7ebe9a02-b81d-49f2-90c6-b01ee1f27519
+m	java:S106^"+Replace this use of System.out by a logger.(·ôØ8¥şğ¶é1J$f746fc9b-22d8-40b2-bf0e-d3050e420a35
+l
+java:S1128")Remove this unused import 'models.Offre'.(©òÇ¡8ïá•¿é1J$f104037f-1c8a-4a25-b9ed-b00f70afbef9
+n
+java:S1128"+Remove this unused import 'models.Sponsor'.(áó…¶8ïá•¿é1J$c3abfe50-c0be-4e52-8b11-950a3f080cf0

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.ListReclamationFrontController">
+   <children>
+      <VBox alignment="CENTER" layoutX="597.0" layoutY="206.0" prefHeight="388.0" prefWidth="334.0">
+         <children>
+            <Label fx:id="labelTiltle" prefHeight="57.0" prefWidth="106.0" text="Nom Utilisateur" />
+            <TextField fx:id="tf_nom" />
+            <Label fx:id="labelTiltle1" prefHeight="58.0" prefWidth="62.0" text="Contenu" />
+            <TextArea fx:id="tf_contenu" prefHeight="200.0" prefWidth="305.0" />
+            <Button mnemonicParsing="false" onAction="#OnAjouterClicked" prefHeight="45.0" prefWidth="133.0" text="Ajouter" />
+         </children>
+      </VBox>
+      <ScrollPane fx:id="scrollPane" layoutX="34.0" layoutY="178.0" prefHeight="426.0" prefWidth="543.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="541.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

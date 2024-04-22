@@ -1,0 +1,9 @@
+
+˜	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›‘–ıûÿÿÿÿ8Îº¥Äé1J$54ee749c-b83b-4564-80fc-0e5587b9b14e
+˜	java:S117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¬İıÿÿÿÿ8Ïº¥Äé1J$b995cd9e-76fd-4c2c-99b0-81f84d08bf8c
+˜	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸñÖéúÿÿÿÿ8Ïº¥Äé1J$bdd72318-11fa-4c32-b44e-68757c0512f7
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Èí³Áøÿÿÿÿ8Ñº¥Äé1J$e859dd91-1cd5-47e3-b322-27998cd0d878
+–	java:S116"TRename this field "BtnRetour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õßªô8ïº¥Äé1J$56dc4421-dafa-4a67-bacd-f1694e1d6d4c
+	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ïˆí8õº¥Äé1J$d5cf86f9-1a6e-4fb4-9dc2-7a746f4fef6e
+{
+java:S1128"3Remove this unused import 'java.security.Provider'.(×„áãøÿÿÿÿ8ÈÜÈÄé1J$70162565-a2b7-4624-8de7-8eed76073c75

@@ -1,0 +1,12 @@
+
+˜	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›‘–ıûÿÿÿÿ8¥şÛé1J$d08bbc63-ba59-4f9c-ab80-b430bfe602de
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Èí³Áøÿÿÿÿ8¢¥şÚé1J$49134944-706d-4753-a67a-8c4e7e9ca677
+–	java:S116"TRename this field "BtnRetour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õßªô8µ¦şÚé1J$7117b3ec-0553-4a09-b75a-d4397aa8eb09
+	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ïˆí8¿¦şÚé1J$ea584b73-db18-411c-b3d8-a52e5eb3f69f
+x
+java:S1128	"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8æ¦şÚé1J$df419809-e45d-4a32-9823-289aea96fa32
+
+java:S1128
+"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8æ¦şÚé1J$3bce861d-5545-4219-896b-6cfb82be56d3
+n
+java:S1128"+Remove this unused import 'models.Sponsor'.(áó…¶8æ¦şÚé1J$074662c6-5137-496b-a358-46d237afc615

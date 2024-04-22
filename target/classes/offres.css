@@ -1,0 +1,25 @@
+.offre-card {
+    -fx-background-color: #fff; /* Light gray background */
+    -fx-border-radius: 5; /* Rounded corners */
+    -fx-padding: 15; /* Padding around content */
+
+}
+
+.offre-card > * { /* Target all child elements within the card */
+    -fx-margin-bottom: 5; /* Spacing between elements */
+}
+
+.offre-description {
+    -fx-font-size: 14px;
+    -fx-wrap-text: true; /* Wrap long descriptions */
+}
+
+.offre-tags {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888; /* Light gray color for tags */
+}
+
+.offre-price {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333; /* Text color for price */
+}

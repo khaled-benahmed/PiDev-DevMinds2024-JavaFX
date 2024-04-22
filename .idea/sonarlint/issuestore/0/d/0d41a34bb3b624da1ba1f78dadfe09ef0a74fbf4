@@ -1,0 +1,13 @@
+
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¸þ†‹ÿÿÿÿÿ8ÂÆÑËé1J$12c4a54d-d089-46f6-8052-be247e11a2a4
+™	java:S116"RRename this field "Content" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É†íäùÿÿÿÿ8ÉÆÑËé1J$321f9db8-5626-4add-9c84-f189513f907f
+œ	java:S116"URename this field "BtnGoOffre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á¦£Úÿÿÿÿÿ8ÉÆÑËé1J$79bbafae-ef5d-4642-881d-27962f7eb1e3
+˜	java:S116"VRename this field "BtnGoSponor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÇóÕ8ÉÆÑËé1J$8c18b1ee-649c-4bde-88bc-ee64c9ec1d62
+•	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾øìïúÿÿÿÿ8ÎÆÑËé1J$9e2d1fe4-ebfc-4129-a8ae-4d9edefa66b0
+•	java:S100)"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïï³’ûÿÿÿÿ8ØÆÑËé1J$1fb12631-a580-4288-a176-fc18c8833822
+r
+java:S1128"/Remove this unused import 'javafx.event.Event'.(ô”áñ8ÛÆÑËé1J$a40ae54b-0bb6-48d7-8834-3d812a13c4a3
+
+java:S1128"7Remove this unused import 'javafx.scene.control.Label'.(ö²­žÿÿÿÿÿ8ÛÆÑËé1J$4c7cc371-b915-47f0-98bb-62bbda69baca
+~
+java:S1128";Remove this unused import 'javafx.scene.control.TextField'.(¨¢¤¶8ÛÆÑËé1J$080bf531-cf3b-496d-a43d-65924f7a2ccc

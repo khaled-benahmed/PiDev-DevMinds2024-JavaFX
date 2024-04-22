@@ -1,0 +1,20 @@
+
+	java:S112g"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8âÈ€¶î1J$02979273-3a3b-4fc9-88aa-f5e83d298a67
+
+java:S1192,"HDefine a constant instead of duplicating this literal "WARNING" 4 times.(œùë³şÿÿÿÿ8æÈ€¶î1J$cb06b766-c395-4a60-9ef8-47ed1ec01173
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Èí³Áøÿÿÿÿ8êÈ€¶î1J$f83381e5-bc62-4be4-844d-529a7ca0ad10
+—	java:S116"URename this field "BtnAjouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÜË8—É€¶î1J$fe3f420c-8e84-4ca8-b285-c552fe93d239
+–	java:S116"TRename this field "BtnRetour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õßªô8˜É€¶î1J$2d61fe94-3118-428d-9653-342f16cc47a3
+œ	java:S116"ZRename this field "BtnInsererImage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ‚üë8˜É€¶î1J$2b471a95-bb4f-488d-a6a8-b513fcf8c300
+›	java:S116$"TRename this field "ImagePath" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÎĞòüÿÿÿÿ8˜É€¶î1J$2733cbdb-e379-4753-bde5-c35fc6d2c18f
+•	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÜÙƒşÿÿÿÿ8É€¶î1J$f064f491-f4fd-492b-9228-58c7a54a417e
+š
+java:S3776'"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(’ÜÙƒşÿÿÿÿ8 É€¶î1J$d7431abf-8b15-418d-bcf6-c7ecdcead391
+„
+java:S63532"<Use concise character class syntax '\\d' instead of '[0-9]'.(ŒÌèşÿÿÿÿ8¤É€¶î1J$57b7919d-c3af-4fc0-9bd5-b20ebfc07d78
+„
+java:S63532"<Use concise character class syntax '\\d' instead of '[0-9]'.(ŒÌèşÿÿÿÿ8¤É€¶î1J$fc51dc5a-1cb8-457a-bf69-86936b54d9c5
+„
+java:S63532"<Use concise character class syntax '\\d' instead of '[0-9]'.(ŒÌèşÿÿÿÿ8¥É€¶î1J$75bb355d-0798-43f1-a0c4-12e5a3edd456
+	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ïˆí8¯É€¶î1J$f0167b71-7cb1-4f1d-afe6-caacc62b2b38
+•	java:S100|"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç¬¡Şşÿÿÿÿ8°É€¶î1J$4c935317-b722-4b4b-8629-5d62b3b56f29

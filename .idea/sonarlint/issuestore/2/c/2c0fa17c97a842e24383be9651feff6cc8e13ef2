@@ -1,0 +1,18 @@
+
+	java:S116	"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇâÈÇıÿÿÿÿJ$d0c94e23-9e37-45da-8d3a-72ec7dcb437a
+	java:S116
+"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ­èëüÿÿÿÿJ$72f12f99-55cf-4605-9012-50a4665c8fee
+“	java:S116"SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìñ­‚üÿÿÿÿJ$a3fccccf-5982-4cfd-b802-cbd7c34c34e3
+b
+java:S1170	"!Make this final field static too.(ÇâÈÇıÿÿÿÿJ$eeb63ed4-a754-4da8-a9a9-6acf4796cc8e
+b
+java:S1170
+"!Make this final field static too.(õ­èëüÿÿÿÿJ$9c8c9964-a318-47fc-9139-7b604df03743
+b
+java:S1170"!Make this final field static too.(ìñ­‚üÿÿÿÿJ$43aa95ea-709a-47bb-8250-b67975adf96f
+Õ
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(‚†÷æJ$4eddb5a8-36ce-4432-9cb5-254e372c4d07
+l
+java:S2115")Add password protection to this database.(åÔÉÊ8ß…ôóå1J$c6fb8859-ecdc-4852-88a1-d71413fb6d47
+k	java:S106"+Replace this use of System.out by a logger.(´áÀŠÿÿÿÿÿJ$13b3a5aa-4022-4d62-ad30-3b27466d0903
+r	java:S106"+Replace this use of System.err by a logger.(ïù¯¯ûÿÿÿÿ8Àó£å1J$388d37b6-5bbe-4762-b538-f0a9631a8124

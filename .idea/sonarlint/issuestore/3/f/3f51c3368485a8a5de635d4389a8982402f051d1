@@ -1,0 +1,20 @@
+
+	java:S112n"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8çõæµî1J$24a2911a-ce1e-411b-9fb2-a9eef997c0f0
+	java:S112p"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8èõæµî1J$378287b9-84ba-4d36-a62b-25982e41aec1
+
+java:S1192'"HDefine a constant instead of duplicating this literal "WARNING" 6 times.(œùë³şÿÿÿÿ8êõæµî1J$b9e32bb7-55da-457e-a8e2-55bc69efcb24
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Èí³Áøÿÿÿÿ8îõæµî1J$fb921428-ce9d-4a2b-9b20-f8d92dae049f
+—	java:S116"URename this field "BtnAjouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÜË8öæµî1J$e70dd21a-41df-4a78-a853-4774420f2405
+–	java:S116"TRename this field "BtnRetour" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õßªô8öæµî1J$e351547a-529f-4367-a1a7-320834453c24
+•	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÜÙƒşÿÿÿÿ8¥öæµî1J$55307615-0472-4524-a64c-b0be3b2a61df
+š
+java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(’ÜÙƒşÿÿÿÿ8¦öæµî1J$a65bf1d7-1080-4dd0-b4bf-0b18afa9b6ca
+„
+java:S6353-"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8¬öæµî1J$15a22928-de25-42be-a9a1-3290f51f413b
+„
+java:S6353-"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8¬öæµî1J$97a98373-30f4-4583-8a80-59750b3d748d
+„
+java:S6353-"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8¬öæµî1J$0db5b85a-eb02-4a14-9b43-8b74822ba857
+ˆ
+java:S2147o"ECombine this catch with the one at line 109, which has the same body.(ï­£Ä8¶öæµî1J$6e21ee3a-7e90-4566-9099-f6c06ea5d1ff
+	java:S100}"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ïˆí8Çöæµî1J$14999519-cabe-47ef-a5ad-c247771f88f4

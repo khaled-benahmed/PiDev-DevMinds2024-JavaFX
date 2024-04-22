@@ -1,0 +1,43 @@
+
+	java:S112Z"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ı‹°¶î1J$3d3624de-5491-413e-b48d-c4600f2d87e8
+	java:S112§"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ş‹°¶î1J$c3fad63a-573d-4b3c-b2b7-e7af92acf685
+	java:S112Â"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÿ‹°¶î1J$7e1c2556-3a88-4062-abd8-3ce64faca028
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÿ‹°¶î1J$48d9baf0-aafa-4c19-b14f-aea31bbb3ed5
+
+java:S1192V"LDefine a constant instead of duplicating this literal "Information" 3 times.(ßĞß¸8‚Œ°¶î1J$25648977-a30f-4e2e-840e-251d70d9c16e
+‘
+java:S1192_"IDefine a constant instead of duplicating this literal "WARNING" 14 times.(œùë³şÿÿÿÿ8‚Œ°¶î1J$90974ed0-573d-48db-bdc8-8551aed1e549
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¸ş†‹ÿÿÿÿÿ8†Œ°¶î1J$a7471cf4-6d63-45b8-8e10-5714103a27ec
+
+java:S3655R"LCall "result.isPresent()" or "!result.isEmpty()" before accessing the value.(ÃÇûŞ8·Œ°¶î1J$5493c30c-e9fc-4394-af56-a64b3067686b
+
+java:S3655–"LCall "result.isPresent()" or "!result.isEmpty()" before accessing the value.(ÃÇûŞ8·Œ°¶î1J$e66fb6ce-09d1-4f0a-8448-89f1ec5a68e5
+›	java:S116"YRename this field "ListViewOffres" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÿÑ8¹Œ°¶î1J$d0e269fd-ee3e-49e0-81ab-e6d45e6fd285
+	java:S116"WRename this field "BtnSupprimer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÈ€Šÿÿÿÿÿ8¹Œ°¶î1J$9caca079-ee95-4ed0-bf04-aa868ec0733a
+˜	java:S116"VRename this field "BtnModifier" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ¡ƒ€8¹Œ°¶î1J$ab5988b9-f944-48c5-b003-312d5ca28c70
+œ	java:S116"URename this field "BtnAnnuler" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬³¯»ÿÿÿÿÿ8¹Œ°¶î1J$581a656a-a801-47b7-84ca-b8ea94153aa3
+›	java:S116%"TRename this field "HboxModif" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…–‹¦ùÿÿÿÿ8¹Œ°¶î1J$f896b793-97a2-44cc-8ba3-28650c837ddc
+—	java:S116'"URename this field "BtnAjouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÜË8¹Œ°¶î1J$7c4faf8d-e0af-4fee-8f4e-f0389c27c125
+•	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²«ÇÏùÿÿÿÿ8ÃŒ°¶î1J$a60a17bf-1df4-4aea-b443-dcef2be0994a
+	java:S100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯åÅè8ÄŒ°¶î1J$a2937c1b-d08f-4983-8056-87798c9d35cb
+	java:S100f"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×å„8ÇŒ°¶î1J$d640f0f7-a09f-4b62-8d11-491f1091c408
+•
+java:S3776f"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(×å„8ÊŒ°¶î1J$e946b4d7-cce0-4446-aae4-836e68297c35
+„
+java:S6353p"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8ÎŒ°¶î1J$ab8b507d-8695-4bd7-a427-1ac3ddd0a563
+„
+java:S6353p"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8ÎŒ°¶î1J$093175ab-ea28-49cc-91a3-56421315904e
+„
+java:S6353p"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8ÎŒ°¶î1J$82518f68-ffb2-46c8-b44b-75b617776f82
+‘	java:S100µ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿æ§Ö8ÒŒ°¶î1J$6a848df7-2619-4f29-9fc8-8946f0e245b7
+–	java:S100Ç"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÜÙƒşÿÿÿÿ8ÔŒ°¶î1J$2c12932a-4be2-4119-8a6d-31ad2fa6a752
+›
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(’ÜÙƒşÿÿÿÿ8ÔŒ°¶î1J$223445dc-7dd5-44dd-baad-3c194453d5f6
+…
+java:S6353Ò"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8×Œ°¶î1J$2ff3f036-1829-4124-93cc-c85bfe57be23
+…
+java:S6353Ò"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8×Œ°¶î1J$b5f8b03a-a93e-40d7-b24f-396ae975ad24
+…
+java:S6353Ò"<Use concise character class syntax '\\d' instead of '[0-9]'.(£¦ŞÚøÿÿÿÿ8×Œ°¶î1J$78d087e7-7ec5-4a0c-bcca-c895266baf3e
+{
+java:S1128"9Remove this unused import 'javax.swing.text.html.Option'.(¼Òì:8ŞŒ°¶î1J$3c12ea80-2aa0-4dfd-8fae-d1a7144c63fe
