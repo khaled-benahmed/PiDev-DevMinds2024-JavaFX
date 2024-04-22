@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="573.0" layoutX="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wallpaper.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="-9.0" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-9.0" AnchorPane.topAnchor="0.0" />
+      <VBox layoutX="222.0" layoutY="42.0" prefHeight="350.0" prefWidth="350.0" AnchorPane.rightAnchor="27.600000000000023" AnchorPane.topAnchor="42.0">
+         <children>
+            <ImageView fitHeight="112.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@login.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="120.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label text="Username" />
+            <TextField fx:id="tname" promptText="Username" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextField>
+            <Label text="Password">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Label>
+            <PasswordField fx:id="tpass" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </PasswordField>
+            <ImageView fx:id="eyeIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@eye.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="btnCon" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: red; -fx-border-radius: 10;" text="Sign in" textFill="#720000">
+               <VBox.margin>
+                  <Insets left="60.0" top="20.0" />
+               </VBox.margin></Button>
+            <Button fx:id="btncancel" mnemonicParsing="false" onAction="#retourInscri" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Sign up" textFill="#720000">
+               <VBox.margin>
+                  <Insets left="60.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Label style="-fx-background-color: white;" text="Forgot Password ?">
+               <VBox.margin>
+                  <Insets left="60.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="10.0" layoutY="10.0">
+         <image>
+            <Image url="@nutrifitlogo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

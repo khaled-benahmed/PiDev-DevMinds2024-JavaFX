@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="Box" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.LandingPageController">
+    <children>
+        <Text fill="#720000" layoutX="280.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur Nutrifit !">
+            <font>
+                <Font name="Leelawadee UI Semilight" size="39.0" />
+            </font></Text>
+        <ImageView fitHeight="534.0" fitWidth="642.0" layoutX="133.0" layoutY="114.0">
+            <image>
+                <Image url="@landing.jpg" />
+            </image>
+        </ImageView>
+        <Text fill="#720000" layoutX="153.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre platforme de bien etre !" wrappingWidth="743.67236328125">
+            <font>
+                <Font name="Leelawadee UI Semilight" size="23.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

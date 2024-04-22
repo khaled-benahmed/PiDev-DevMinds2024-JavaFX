@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="76.0" prefWidth="1057.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.NavbarController">
+    <children>
+        <ImageView fx:id="out" fitHeight="52.0" fitWidth="53.0" layoutX="970.0" layoutY="12.0" onMouseClicked="#Logout">
+            <image>
+                <Image url="@logout-removebg-preview.png" />
+            </image>
+        </ImageView>
+
+        <Text fx:id="welcomeText" fill="#787a80" layoutX="79.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font name="Leelawadee UI Semilight" size="18.0" />
+            </font>
+        </Text>
+        <ImageView fx:id="panierIcon" fitHeight="52.0" fitWidth="53.0" layoutX="830.0" layoutY="12.0" onMouseClicked="#openPanier">
+            <image>
+                <Image url="@pan.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="profileIcon" fitHeight="52.0" fitWidth="53.0" layoutX="900.0" layoutY="12.0" onMouseClicked="#openProfile">
+            <image>
+                <Image url="@1313-removebg-preview.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

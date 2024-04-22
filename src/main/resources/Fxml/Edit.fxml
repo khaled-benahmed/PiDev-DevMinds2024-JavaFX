@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.EditController">
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+
+        </ImageView>
+        <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="14.0" prefHeight="578.0" prefWidth="775.0" style="-fx-background-color: WHITE;">
+            <children>
+                <VBox layoutX="277.0" layoutY="143.0" prefHeight="374.0" prefWidth="197.0" style="-fx-spacing: 13; -fx-background-color: white;">
+                    <children>
+                  <Text fill="#720000" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+                        <Label fx:id="nom" prefHeight="23.0" prefWidth="187.0" style="-fx-border-color: #720000; -fx-border-radius: 10;" text="nom">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                  <Text fill="#720000" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" />
+                        <Label fx:id="prenom" prefHeight="17.0" prefWidth="187.0" style="-fx-border-color: #720000; -fx-border-radius: 10;" text="prenom">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                  <Text fill="#720000" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                        <Label fx:id="email" prefHeight="17.0" prefWidth="187.0" style="-fx-border-color: #720000; -fx-border-radius: 10;" text="email">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                  <Text fill="#720000" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone" />
+                        <Label fx:id="tel" prefHeight="17.0" prefWidth="187.0" style="-fx-border-color: #720000; -fx-border-radius: 10;" text="tel">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                  <Text fill="#720000" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+                        <Label fx:id="mdp" prefHeight="17.0" prefWidth="187.0" style="-fx-border-color: #720000; -fx-border-radius: 10;" text="mot de passe">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                  <Text fill="#720000" strokeType="OUTSIDE" strokeWidth="0.0" text="Role" />
+                        <Label fx:id="role" prefHeight="17.0" prefWidth="206.0" style="-fx-border-color: #720000; -fx-border-radius: 10;" text="role">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <Button fx:id="delb" layoutX="387.0" layoutY="536.0" mnemonicParsing="false" onAction="#delete" prefHeight="28.0" prefWidth="141.0" style="-fx-background-color: #510c07; -fx-background-radius: 10;" text="Supprimer" textFill="WHITE">
+                    <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                    </font></Button>
+                <Button fx:id="modb" layoutX="246.0" layoutY="536.0" mnemonicParsing="false" onAction="#modifier" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: #510c07; -fx-background-radius: 10;" text="Modifier" textFill="WHITE">
+                    <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                    </font></Button>
+                <ImageView fx:id="backbtn" fitHeight="51.0" fitWidth="58.0" layoutX="25.0" layoutY="12.0" onMouseClicked="#back" visible="false">
+                    <image>
+                        <Image url="@retour-removebg-preview.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="goBackBtn" fitHeight="45.0" fitWidth="44.0" layoutX="14.0" layoutY="12.0" onMouseClicked="#goBackHandler" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@retour-removebg-preview.png" />
+                    </image>
+                </ImageView>
+            <ImageView fx:id="pdp" fitHeight="141.0" fitWidth="142.0" layoutX="297.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@login.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
