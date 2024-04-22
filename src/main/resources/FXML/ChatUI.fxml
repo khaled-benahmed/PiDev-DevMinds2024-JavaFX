@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="gui.ChatController"
+      spacing="10" alignment="CENTER"
+      stylesheets="@../css/chatapp.css">
+    <TextArea fx:id="chatArea" editable="false" prefHeight="200"/>
+    <TextField fx:id="inputField" onAction="#sendMessage" promptText="Type your message here" prefWidth="200"/>
+    <Button text="Send" onAction="#sendMessage"/>
+</VBox>

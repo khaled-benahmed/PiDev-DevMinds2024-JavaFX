@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="415.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ShowActiviteController">
+     <HBox prefHeight="75.0" prefWidth="717.0" style="-fx-background-color: #720000; -fx-alignment: center;" />
+   <Label layoutX="382.0" layoutY="85.0" prefHeight="12.0" prefWidth="146.0" style="-fx-font-size: 18px; -fx-padding: 10px;" text="Activité Détail" />
+   <Label layoutX="315.0" layoutY="189.0" style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Durée :" />
+   <Label fx:id="dureeLabel" layoutX="433.0" layoutY="189.0" style="-fx-font-size: 14px;" text="Additional Information" />
+   <Label layoutX="315.0" layoutY="152.0" style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Nom :" />
+   <Label fx:id="nomLabel" layoutX="433.0" layoutY="152.0" style="-fx-font-size: 14px;" text="Additional Information" />
+   <ImageView fx:id="imgLabel" fitHeight="208.0" fitWidth="207.0" layoutX="46.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" />
+   <Label layoutX="315.0" layoutY="263.0" style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Difficulté :" />
+   <Label fx:id="diffLabel" layoutX="433.0" layoutY="263.0" style="-fx-font-size: 14px;" text="Additional Information" />
+   <Label layoutX="315.0" layoutY="302.0" style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Description :" />
+   <Label fx:id="descriptionLabel" layoutX="315.0" layoutY="334.0" style="-fx-font-size: 14px;" text="Additional Information" />
+</AnchorPane>

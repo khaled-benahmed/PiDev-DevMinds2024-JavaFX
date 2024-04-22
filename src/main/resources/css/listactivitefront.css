@@ -1,0 +1,56 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+.bt{    
+    -fx-background-color: #720000;
+    -fx-background-radius : 20;
+}
+
+.cart{
+    -fx-background-color: #fff;
+    -fx-background-radius : 20;
+}
+
+.pag {
+    -fx-color: #720000;
+}
+
+.ma-classe-css{
+  -fx-background-color: #A9A9A9;
+}
+
+.disabled-day {
+    -fx-background-color: #ccc;
+}
+
+.active-day {
+    -fx-background-color: #A9A9A9;
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .value > .spinner-content {
+    -fx-background-color: green;
+}
+
+.ct {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+    -fx-background-radius: 30;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-width: 30px;
+    -fx-height: 20px;
+    -fx-max-width: 20; 
+    -fx-min-height:200;
+}
+
+.grid {
+  align-items: center;
+}
+
+.hbox {
+  align-items: center;
+  
+}

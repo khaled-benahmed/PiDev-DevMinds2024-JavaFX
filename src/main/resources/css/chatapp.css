@@ -1,0 +1,38 @@
+/* chatapp.css */
+
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-padding: 20px;
+    -fx-background-color: #F3F4F6;
+}
+
+.text-area {
+    -fx-control-inner-background: #ffffff;
+    -fx-border-color: #B1B1B1;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.text-field {
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-highlight-fill: #00B4F1;
+    -fx-highlight-text-fill: white;
+    -fx-border-color: #B1B1B1;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button {
+    -fx-background-color: #0078D7;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+}
+
+.button:hover {
+    -fx-background-color: #005EA6;
+}

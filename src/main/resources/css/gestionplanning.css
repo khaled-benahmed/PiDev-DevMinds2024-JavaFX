@@ -1,0 +1,17 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.btn{
+    -fx-background-color: #720000;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-size:14px;
+    -fx-font-family:"System";
+    -fx-font-weight:800;
+    -fx-cursor: hand;
+}
+
+.btn:hover{
+    -fx-background-color: #5B0000;
+}
