@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="700.0" prefWidth="1116.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.AfficherPlat" stylesheets="@nord-light.css">
+    <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="20.0" layoutY="20.0">
+        <image>
+            <Image url="@img/logooo.jpg" />
+        </image>
+    </ImageView>
+    <children>
+      <TableView fx:id="list_plat" layoutX="23.0" layoutY="221.0" prefHeight="371.0" prefWidth="1039.0">
+        <columns>
+          <TableColumn fx:id="plat_id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="plat_nom" prefWidth="130.4000244140625" text="Nom" />
+            <TableColumn fx:id="plat_calories" prefWidth="94.39996337890625" text="Calories" />
+            <TableColumn fx:id="plat_prix" prefWidth="151.20001220703125" text="Prix" />
+            <TableColumn fx:id="plat_image" prefWidth="236.00006103515625" text="Image" />
+            <TableColumn fx:id="plat_allergie" prefWidth="103.20001220703125" text="Allergie" />
+            <TableColumn fx:id="plat_actions" prefWidth="239.2000732421875" text="Actions" />
+        </columns>
+      </TableView>
+       <Text layoutX="79.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste Des Plats" wrappingWidth="361.3367156982422">
+           <font>
+               <Font size="41.0" />
+           </font>
+           <fill>
+               <Color fx:value="#720000" />
+           </fill>
+       </Text>
+
+   </children>
+</AnchorPane>

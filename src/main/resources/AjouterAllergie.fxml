@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.paint.Color?>
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.AjouterAllergie" stylesheets="@nord-light.css">
+   <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="20.0" layoutY="20.0">
+      <image>
+         <Image url="@img/logooo.jpg" />
+      </image>
+   </ImageView>
+   <children>
+      <TextField fx:id="nomtextfield" layoutX="343.0" layoutY="223.0" />
+      <TextArea fx:id="destextarea" layoutX="437.0" layoutY="297.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="336.0" layoutY="183.0" prefHeight="18.0" prefWidth="162.0" text="Nom:" />
+      <Label layoutX="467.0" layoutY="264.0" prefHeight="18.0" prefWidth="114.0" text="Description:" />
+      <Button layoutX="341.0" layoutY="532.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="192.0" text="Ajouter " />
+      <Button layoutX="341.0" layoutY="568.0" mnemonicParsing="false" onAction="#Afficher" prefHeight="26.0" prefWidth="192.0" text="Afficher" />
+      <TextField fx:id="id_plat" layoutX="525.0" layoutY="223.0" />
+      <Label layoutX="525.0" layoutY="192.0" prefHeight="18.0" prefWidth="162.0" text="ID Plat:" />
+      <Text layoutX="241.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une Allergie">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <fill>
+            <Color fx:value="#720000" />
+         </fill>
+      </Text>
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.AjouterPlat" stylesheets="@nord-light.css">
+   <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="20.0" layoutY="20.0">
+      <image>
+         <Image url="@img/logooo.jpg" />
+      </image>
+   </ImageView>
+
+   <children>
+      <Label layoutX="309.0" layoutY="172.0" prefHeight="18.0" prefWidth="108.0" text="Nom:" />
+      <TextField fx:id="NomTextfield" layoutX="309.0" layoutY="204.0" />
+      <ChoiceBox fx:id="CalorieBox" layoutX="308.0" layoutY="316.0" prefWidth="150.0" />
+      <Label layoutX="309.0" layoutY="276.0" prefHeight="18.0" prefWidth="108.0" text="Calories:" />
+      <Label layoutX="506.0" layoutY="267.0" prefHeight="18.0" prefWidth="108.0" text="Prix:" />
+      <ChoiceBox fx:id="PrixBox" layoutX="506.0" layoutY="316.0" prefWidth="150.0" />
+      <Button layoutX="401.0" layoutY="365.0" mnemonicParsing="false" onAction="#InsereImage" prefHeight="42.0" prefWidth="198.0" text="Inserer une image" />
+      <Button layoutX="327.0" layoutY="468.0" mnemonicParsing="false" onAction="#Ajouter" text="Ajouter Un Plat" />
+
+      <Button layoutX="325.0" layoutY="510.0" mnemonicParsing="false" onAction="#Afficher" text="Afficher Les Plat" />
+      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="703.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="AllergieBox" layoutX="506.0" layoutY="204.0" prefWidth="150.0" />
+      <Label layoutX="506.0" layoutY="172.0" prefHeight="18.0" prefWidth="108.0" text="Allergie " />
+      <Button layoutX="1088.0" layoutY="606.0" mnemonicParsing="false" onAction="#Allergie" text="Ajouter Allergie" />
+      <Line endX="1078.8929443359375" layoutX="122.0" layoutY="596.0" startX="-122.00001525878906" />
+      <Button layoutX="1088.0" layoutY="642.0" mnemonicParsing="false" onAction="#AfficherA" text="Afficher Allergie" />
+      <Text layoutX="308.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Un Plat">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <fill>
+            <Color fx:value="#720000" />
+         </fill>
+      </Text>
+
+   </children>
+</AnchorPane>

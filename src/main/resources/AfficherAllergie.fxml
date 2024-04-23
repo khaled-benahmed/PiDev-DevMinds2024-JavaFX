@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.paint.Color?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.AfficherAllergie" stylesheets="@nord-light.css">
+    <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="20.0" layoutY="20.0">
+        <image>
+            <Image url="@img/logooo.jpg" />
+        </image>
+    </ImageView>
+    <children>
+      <TableView fx:id="listAllergie" layoutX="176.0" layoutY="184.0" prefHeight="400.0" prefWidth="693.0">
+        <columns>
+          <TableColumn fx:id="Id_allergie" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="Idp_allergie" prefWidth="75.0" text="ID Plat" />
+            <TableColumn fx:id="nom_allergie" prefWidth="113.60003662109375" text="Nom" />
+            <TableColumn fx:id="des_allergie" prefWidth="205.60003662109375" text="Description " />
+            <TableColumn fx:id="actions" prefWidth="223.20001220703125" text="Actions" />
+        </columns>
+      </TableView>
+        <Button layoutX="341.0" layoutY="568.0" mnemonicParsing="false" onAction="#AjouterAllergie" prefHeight="26.0" prefWidth="192.0" text="Ajouter Allergie" />
+
+        <Text layoutX="176.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste d'Allergies" wrappingWidth="407.74493408203125">
+           <font>
+               <Font size="42.0" />
+           </font>
+           <fill>
+               <Color fx:value="#720000" /> <!-- Rouge -->
+           </fill>
+       </Text>
+   </children>
+</AnchorPane>

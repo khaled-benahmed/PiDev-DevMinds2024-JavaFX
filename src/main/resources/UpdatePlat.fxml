@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.paint.Color?>
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.UpdatePlat" stylesheets="@nord-light.css">
+   <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="20.0" layoutY="20.0">
+      <image>
+         <Image url="@img/logooo.jpg" />
+      </image>
+   </ImageView>
+   <children>
+      <Label layoutX="228.0" layoutY="175.0" prefHeight="18.0" prefWidth="108.0" text="Nom:" />
+      <TextField fx:id="NomTextfield" layoutX="335.0" layoutY="172.0" />
+      <ChoiceBox fx:id="CalorieBox" layoutX="372.0" layoutY="226.0" prefWidth="150.0" />
+      <Label layoutX="237.0" layoutY="229.0" prefHeight="18.0" prefWidth="108.0" text="Calories:" />
+      <Label layoutX="243.0" layoutY="285.0" prefHeight="18.0" prefWidth="108.0" text="Prix:" />
+      <ChoiceBox fx:id="PrixBox" layoutX="366.0" layoutY="282.0" prefWidth="150.0" />
+      <Label fx:id="imagelabel" layoutX="423.0" layoutY="350.0" prefHeight="129.0" prefWidth="225.0" text="Image" />
+      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="416.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="197.0" layoutY="490.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="26.0" prefWidth="174.0" text="Modifier" />
+      <Button layoutX="191.0" layoutY="362.0" mnemonicParsing="false" onAction="#InsereImage" prefHeight="42.0" prefWidth="198.0" text="Inserer une image" />
+      <Text layoutX="147.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier Un Plat">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <fill>
+            <Color fx:value="#720000" />
+         </fill>
+      </Text>
+
+   </children>
+</AnchorPane>
