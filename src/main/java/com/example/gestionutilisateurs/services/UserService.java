@@ -47,7 +47,6 @@ public class UserService implements IService<User> {
         ;
         int result = stmt.executeUpdate();
 
-
         System.out.println(result + " enregistrement ajouté.");
 
 
@@ -61,11 +60,21 @@ public class UserService implements IService<User> {
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             exist = true;
-
         }
         return exist;
     }
 
+    public boolean existUsername(String username) throws SQLException {
+        boolean exist = false;
+        String query = "SELECT * FROM user WHERE username = ?";
+        PreparedStatement ps = cnx.prepareStatement(query);
+        ps.setString(1, username);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            exist = true;
+        }
+        return exist;
+    }
 
     @Override
     public void modifier(User t) throws SQLException {
@@ -153,9 +162,6 @@ public class UserService implements IService<User> {
 
         }
 
-
-
-
         return users;
     }
 
@@ -196,10 +202,14 @@ public class UserService implements IService<User> {
         }
         return data;
     }
+    public void ModifMDP(String email, String password) throws SQLException{
 
-
-
-
+        String req="Update user set password=? where email=?";
+        PreparedStatement stmt = cnx.prepareStatement(req);
+        stmt.setString(1, password);
+        stmt.setString(2, email);
+        stmt.executeUpdate();
+    }
 
 }
 

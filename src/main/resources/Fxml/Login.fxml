@@ -9,23 +9,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.LoginController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="573.0" layoutX="203.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@wallpaper.jpg" />
-         </image>
-      </ImageView>
       <VBox layoutX="-9.0" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-9.0" AnchorPane.topAnchor="0.0" />
-      <VBox layoutX="222.0" layoutY="42.0" prefHeight="350.0" prefWidth="350.0" AnchorPane.rightAnchor="27.600000000000023" AnchorPane.topAnchor="42.0">
+      <VBox layoutX="222.0" layoutY="-0.8" prefHeight="400.0" prefWidth="378.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
          <children>
             <ImageView fitHeight="112.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@login.png" />
                </image>
                <VBox.margin>
-                  <Insets left="120.0" />
+                  <Insets left="120.0" top="10.0" />
                </VBox.margin>
             </ImageView>
             <Label text="Username" />
@@ -59,11 +56,16 @@
                   <Insets left="60.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Label style="-fx-background-color: white;" text="Forgot Password ?">
+
+            <Text layoutX="492.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mot de passe oublié?" wrappingWidth="180.0">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
                <VBox.margin>
-                  <Insets left="60.0" top="10.0" />
+                  <Insets top="10.0" />
                </VBox.margin>
-            </Label>
+            </Text>
+            <Button fx:id="icibt" layoutX="614.0" layoutY="386.0" mnemonicParsing="false" onAction="#passwrd" style="-fx-background-color: grey;" text="cliquez ici" underline="true" />
          </children>
       </VBox>
       <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="10.0" layoutY="10.0">

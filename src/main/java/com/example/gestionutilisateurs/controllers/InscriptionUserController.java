@@ -2,14 +2,16 @@
 package com.example.gestionutilisateurs.controllers;
 
 import com.example.gestionutilisateurs.entities.AESCrypt;
-//import com.example.gestionutilisateurs.entities.SMSsender;
 import com.example.gestionutilisateurs.entities.User;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -63,7 +66,10 @@ public class InscriptionUserController implements Initializable {
     public AESCrypt CryptVar;
     public String key = "ThisIsASecretKey";
 
-
+    private List<String> suggestions = new ArrayList<>();
+    private void onUsernameClick(MouseEvent event) {
+        generateUsernameSuggestions();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,6 +78,7 @@ public class InscriptionUserController implements Initializable {
         choices.getItems().add("simple utilisateur");
         choices.getSelectionModel().select("Coach");
 
+        generateUsernameSuggestions();
     }
 
     @FXML
@@ -79,8 +86,26 @@ public class InscriptionUserController implements Initializable {
 
         String email=emailtf.getText();
         String tel= teltf.getText();
+        String username = usernametf.getText();
 
-        if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
+        if (us.existUsername(username)) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Ce nom d'utilisateur est déjà enregistré!");
+            alert.show();
+            return;
+        }
+        if (!isPasswordComplex(mdptf.getText())) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Le mot de passe doit être complexe!");
+            alert.show();
+            return;
+        }
+
+        else if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
@@ -122,6 +147,7 @@ public class InscriptionUserController implements Initializable {
                 p.setPassword(encrypted);
                 p.setImage(imageData);
                 us.ajouter(p);
+
                 // Récupérer le numéro de téléphone de TelField
                 String tel1 = teltf.getText();
 
@@ -134,6 +160,13 @@ public class InscriptionUserController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("utilisateur ajouté!");
                 alert.show();
+                // Rediriger vers la page de login
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/login.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
             }
             catch (SQLException ex) {
                 System.out.println("error" + ex.getMessage());
@@ -202,5 +235,48 @@ public class InscriptionUserController implements Initializable {
 //       }
 
     }
+
+    private boolean isPasswordComplex(String password) {
+        // Vérifier si le mot de passe a au moins 8 caractères
+        if (password.length() < 8) {
+            return false;
+        }
+
+        // Vérifier s'il contient au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial
+        boolean hasUpperCase = false;
+        boolean hasLowerCase = false;
+        boolean hasDigit = false;
+        boolean hasSpecialChar = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                hasUpperCase = true;
+            } else if (Character.isLowerCase(c)) {
+                hasLowerCase = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            } else if (!Character.isLetterOrDigit(c)) {
+                hasSpecialChar = true;
+            }
+        }
+
+        return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+    }
+
+    private void generateUsernameSuggestions() {
+        String nom = nomtf.getText().toLowerCase();
+        String prenom = prenomtf.getText().toLowerCase();
+
+        suggestions.clear(); // Effacer les suggestions précédentes
+        suggestions.add(nom + "_" + prenom);
+        suggestions.add(prenom + "_" + nom);
+        suggestions.add(nom + "." + prenom);
+        suggestions.add(prenom + "." + nom);
+        suggestions.add(nom + prenom);
+        suggestions.add(prenom + nom);
+
+
+    }
+
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
@@ -13,7 +14,7 @@
 
 <AnchorPane prefHeight="702.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.EditProfilController">
     <children>
-        <VBox layoutX="191.0" layoutY="16.0" spacing="10.0">
+        <VBox layoutX="143.0" layoutY="16.0" prefHeight="668.0" prefWidth="332.0" spacing="10.0">
             <children>
                 <StackPane>
                     <children>
@@ -25,27 +26,30 @@
                 </StackPane>
 
                 <Label text="Last Name" />
-                <TextField fx:id="tLastName" />
+                <TextField fx:id="tLastName" style="-fx-background-radius: 10; -fx-background-color: white;" />
                 <Label text="First Name" />
-                <TextField fx:id="tFirstName" />
+                <TextField fx:id="tFirstName" style="-fx-background-radius: 10; -fx-background-color: white;" />
                 <Label text="Email" />
-                <TextField fx:id="tEmail" />
+                <TextField fx:id="tEmail" style="-fx-background-radius: 10; -fx-background-color: white;" />
                 <Label text="Telephone" />
-                <TextField fx:id="tTel" />
+                <TextField fx:id="tTel" style="-fx-background-radius: 10; -fx-background-color: white;" />
                 <Label text="Username" />
-                <TextField fx:id="tUsername" />
+                <TextField fx:id="tUsername" style="-fx-background-radius: 10; -fx-background-color: white;" />
                 <Label text="Role" />
-                <TextField fx:id="tRole" editable="false" /> <!-- Définir editable à false -->
+                <TextField fx:id="tRole" editable="false" style="-fx-background-radius: 10; -fx-background-color: white;">
+               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets></TextField> <!-- Définir editable à false -->
 
-                <Button fx:id="upbtn" layoutX="76.0" layoutY="342.0" mnemonicParsing="false" onAction="#uploadImgBtn" prefHeight="34.0" prefWidth="217.0" style="-fx-background-color: #510c07;" text="Upload" textFill="#fffefe">
+                <Button fx:id="upbtn" layoutX="76.0" layoutY="342.0" mnemonicParsing="false" onAction="#uploadImgBtn" prefHeight="34.0" prefWidth="217.0" style="-fx-background-color: #720000;" text="Upload" textFill="#fffefe">
                     <font>
                         <Font name="Verdana Bold" size="15.0" />
                     </font>
                 </Button>
             <ButtonBar prefHeight="23.0" prefWidth="167.0">
               <buttons>
-                      <Button fx:id="btnSave" mnemonicParsing="false" onAction="#updateProfile" text="Save" />
-                    <Button mnemonicParsing="false" onAction="#goBackHandler" text="Go Back" />
+                      <Button fx:id="btnSave" mnemonicParsing="false" onAction="#updateProfile" style="-fx-background-radius: 10; -fx-background-color: #720000; -fx-background-color: ;" text="Save" textFill="WHITE" />
+                    <Button mnemonicParsing="false" onAction="#goBackHandler" style="-fx-background-radius: 10; -fx-background-color: #720000; col: ;" text="Go Back" textFill="WHITE" />
               </buttons>
             </ButtonBar>
             </children>

@@ -2,6 +2,7 @@ module com.example.gestionutilisateurs {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires javax.mail.api;
 
 
     opens com.example.gestionutilisateurs to javafx.fxml;

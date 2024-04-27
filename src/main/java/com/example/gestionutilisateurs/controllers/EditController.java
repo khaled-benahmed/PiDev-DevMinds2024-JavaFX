@@ -11,6 +11,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import java.util.Optional;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,6 +27,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.control.ButtonType;
+
 import javafx.stage.Stage;
 import com.example.gestionutilisateurs.services.UserService;
 
@@ -104,27 +108,38 @@ public class EditController implements Initializable {
 
 
     @FXML
-    private void delete(ActionEvent event) throws IOException  {
-        try {
-            us.supprimer(user);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void delete(ActionEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Confirmation de la suppression");
+        alert.setContentText("Êtes-vous sûr de vouloir supprimer ce compte ?");
 
-            alert.setHeaderText(null);
-            alert.setContentText("Compte supprimé!");
-            alert.show();
-            if(!(LoginController.UserConnected.getRole().equals("Admin"))){
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            // L'utilisateur a confirmé la suppression
+            try {
+                us.supprimer(user);
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setHeaderText(null);
+                successAlert.setContentText("Compte supprimé avec succès !");
+                successAlert.show();
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setTitle("Login");
-                stage.setScene(scene);
-                stage.show();
+                // Redirection vers la page de connexion si l'utilisateur n'est pas un administrateur
+                if (!LoginController.UserConnected.getRole().equals("Admin")) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+                    Parent root = loader.load();
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setTitle("Login");
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            } catch (SQLException ex) {
+                System.out.println("Erreur lors de la suppression du compte : " + ex.getMessage());
             }
-
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+        } else {
+            // L'utilisateur a annulé la suppression
+            System.out.println("Suppression annulée par l'utilisateur");
         }
     }
 

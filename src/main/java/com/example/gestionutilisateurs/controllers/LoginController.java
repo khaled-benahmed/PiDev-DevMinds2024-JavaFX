@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,6 +39,9 @@ public class LoginController implements Initializable {
 
     public AESCrypt CryptVar;
     public String key = "ThisIsASecretKey";
+
+    @FXML
+    private Button icibt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -122,6 +126,25 @@ public class LoginController implements Initializable {
         }
         passwordVisible = !passwordVisible;
     }
+
+    @FXML
+    private void mdp_ob(MouseEvent event) {
+    }
+
+    @FXML
+    private void passwrd(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/email_check.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("changement de mot de passe");
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
 
 
 }
