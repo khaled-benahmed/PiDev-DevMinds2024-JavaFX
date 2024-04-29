@@ -128,12 +128,26 @@ public class ListActiviteController implements Initializable {
         DureeActCell.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Activite, String>>() {
             @Override
             public void handle(TableColumn.CellEditEvent<Activite, String> event) {
-                Activite a = event.getRowValue();
-                a.setDuree_activite(event.getNewValue());
-                ActiviteService as = new ActiviteService();
-                as.modifier(a);
+                // Vérification si la nouvelle valeur est un nombre
+                String nouvelleValeur = event.getNewValue();
+                String regexNombre = "^\\d+(\\.\\d+)?$";
+                if (!nouvelleValeur.matches(regexNombre)) {
+                    // Si la nouvelle valeur n'est pas un nombre, afficher une alerte
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Valeur invalide");
+                    alert.setHeaderText("Modification de la durée de l'activité");
+                    alert.setContentText("La durée de l'activité doit être un nombre.");
+                    alert.showAndWait();
+                } else {
+                    // Si la nouvelle valeur est un nombre, procéder à la mise à jour
+                    Activite a = event.getRowValue();
+                    a.setDuree_activite(nouvelleValeur);
+                    ActiviteService as = new ActiviteService();
+                    as.modifier(a);
+                }
             }
         });
+
         DiffActCell.setCellValueFactory(new PropertyValueFactory<>("difficulte_activite"));
         DiffActCell.setCellFactory(TextFieldTableCell.forTableColumn());
         DiffActCell.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Activite, String>>() {

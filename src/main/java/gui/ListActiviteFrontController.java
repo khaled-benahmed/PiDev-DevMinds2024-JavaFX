@@ -42,9 +42,6 @@ public class ListActiviteFrontController implements Initializable {
     private ImageView background;
 
     @FXML
-    private Button btnConsulterCours;
-
-    @FXML
     private Button btnConsulterPlanning;
 
     @FXML
@@ -65,15 +62,7 @@ public class ListActiviteFrontController implements Initializable {
     
     @FXML
     private AnchorPane listActiviteFront;
-    
-    
-    @FXML
-    void go_ListCours()throws IOException{ 
-        Parent fxml= FXMLLoader.load(getClass().getResource("/FXML/listCoursFront.fxml"));
-        listActiviteFront.getChildren().removeAll();
-        listActiviteFront.getChildren().setAll(fxml);
-    }
-    
+
     @FXML
     void go_ListPlanning()throws IOException{ 
         Parent fxml= FXMLLoader.load(getClass().getResource("/FXML/listPlanningFront.fxml"));

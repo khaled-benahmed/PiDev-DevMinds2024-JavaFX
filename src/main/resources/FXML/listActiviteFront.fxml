@@ -44,11 +44,6 @@
             <Image url="@../images/icons8-go-back-64.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnConsulterCours" layoutX="972.0" layoutY="199.0" mnemonicParsing="false" onAction="#go_ListCours" prefHeight="36.0" prefWidth="186.0" styleClass="bt" stylesheets="@../css/listactivitefront.css" text="Consulter Cours" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
       <HBox fx:id="hbox" layoutX="145.0" layoutY="435.0" prefHeight="290.0" prefWidth="910.0" styleClass="hbox" stylesheets="@../css/listactivitefront.css">
          <children>
             <HBox fx:id="vbox" prefHeight="290.0" prefWidth="856.0">

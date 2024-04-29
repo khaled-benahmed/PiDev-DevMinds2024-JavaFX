@@ -22,12 +22,12 @@ public class PlanningService implements CrudPlanning<Planning>{
     public Connection conx;
     public Statement stm;
 
-    
+
     public PlanningService() {
         conx = MyDB.getInstance().getConx();
 
     }
-    
+
     @Override
     public void ajouter(Planning p) {
         String req = "INSERT INTO planning (activite_id, date_planning, jour_planning, heure_planning, heure_fin,titre) VALUES (?, ?, ?, ?, ?, ?)";
@@ -94,7 +94,7 @@ public class PlanningService implements CrudPlanning<Planning>{
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 list.add(new Planning(rs.getInt("id"), rs.getInt("activite_id") ,rs.getString("titre"),
-                        rs.getDate("date_planning"), rs.getString("jour_planning"), 
+                        rs.getDate("date_planning"), rs.getString("jour_planning"),
                         rs.getInt("heure_planning"),rs.getInt("heure_fin")));
             }
         } catch (SQLException e) {
@@ -102,8 +102,31 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
-    
+    public void deletePastPlannings() {
+        try {
+            // Get the current date
+            java.util.Date currentDate = new java.util.Date();
+
+            // Prepare the delete statement for past plannings
+            String deleteQuery = "DELETE FROM planning WHERE date_planning < ?";
+
+            // Create a PreparedStatement
+            PreparedStatement pst = conx.prepareStatement(deleteQuery);
+
+            // Set the current date as parameter
+            pst.setDate(1, new java.sql.Date(currentDate.getTime()));
+
+            // Execute the delete statement
+            int rowsAffected = pst.executeUpdate();
+
+            // Print the number of deleted rows
+            System.out.println(rowsAffected + " past plannings deleted from the database.");
+        } catch (SQLException e) {
+            System.err.println("Error deleting past plannings: " + e.getMessage());
+        }
+    }
+
+
     public List<Planning> ShowLundi() {
         List<Planning> list = new ArrayList<>();
 
@@ -119,7 +142,7 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
+
     public List<Planning> ShowMardi() {
         List<Planning> list = new ArrayList<>();
 
@@ -135,7 +158,7 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
+
     public List<Planning> ShowMercredi() {
         List<Planning> list = new ArrayList<>();
 
@@ -151,7 +174,7 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
+
     public List<Planning> ShowJeudi() {
         List<Planning> list = new ArrayList<>();
 
@@ -167,7 +190,7 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
+
     public List<Planning> ShowVendredi() {
         List<Planning> list = new ArrayList<>();
 
@@ -183,7 +206,7 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
+
     public List<Planning> ShowSamedi() {
         List<Planning> list = new ArrayList<>();
 
@@ -199,7 +222,7 @@ public class PlanningService implements CrudPlanning<Planning>{
         }
         return list;
     }
-    
+
     public List<Planning> ShowDimanche() {
         List<Planning> list = new ArrayList<>();
 
@@ -224,8 +247,8 @@ public class PlanningService implements CrudPlanning<Planning>{
 
         return list1;
     }
-    
-    
+
+
     public List<Planning> triJourPlanning() {
 
         List<Planning> list1 = new ArrayList<>();

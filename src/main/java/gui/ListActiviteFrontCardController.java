@@ -24,8 +24,8 @@ public class ListActiviteFrontCardController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
-    
+
+
     @FXML
     private ImageView imgAct;
 
@@ -40,28 +40,36 @@ public class ListActiviteFrontCardController implements Initializable {
 
     @FXML
     private Label prix;
-    
+
     MyListener myListener;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    
-    Activite act;
-    
-    public void setData (Activite act, MyListener myListener){
-        this.act = act ;
-        this.myListener = myListener;
-        Image image = new Image("uploads/"+act.getImage_activite());
-        imgAct.setFitWidth(127);
-        imgAct.setFitHeight(111);
-        imgAct.setImage(image);
-        labelNomAct.setText(act.getNom_activite());
-        labelDureeAct.setText("Duree : "+act.getNom_activite());
-        labelDescriptionAct.setText(act.getDescription_activite());
-        
     }
-    
+
+
+    Activite act;
+
+    public void setData(Activite act, MyListener myListener) {
+        this.act = act;
+        this.myListener = myListener;
+        // Check if the image file exists before trying to load it
+        String imagePath = "/uploads/" + act.getImage_activite();
+        URL imageUrl = getClass().getResource(imagePath);
+        if (imageUrl != null) {
+            Image image = new Image(imageUrl.toExternalForm());
+            imgAct.setFitWidth(127);
+            imgAct.setFitHeight(111);
+            imgAct.setImage(image);
+        } else {
+            // Handle the case where the image file cannot be found
+            System.out.println("Image file not found: " + imagePath);
+        }
+        labelNomAct.setText(act.getNom_activite());
+        labelDureeAct.setText("Duree : " + act.getNom_activite());
+        labelDescriptionAct.setText(act.getDescription_activite());
+    }
+
+
 }

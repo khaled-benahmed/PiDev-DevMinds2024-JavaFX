@@ -12,10 +12,7 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -100,7 +97,7 @@ public class ListPlanningController implements Initializable {
             dataPlanning.add(c);
         });
 
-        ActivitePlanningCell.setCellValueFactory(new PropertyValueFactory<>("nom_activite"));
+        ActivitePlanningCell.setCellValueFactory(new PropertyValueFactory<>("activite_id"));
         ActivitePlanningCell.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         ActivitePlanningCell.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Planning, Integer>>() {
             @Override
@@ -135,22 +132,67 @@ public class ListPlanningController implements Initializable {
             @Override
             public void handle(TableColumn.CellEditEvent<Planning, Date> event) {
                 Planning p = event.getRowValue();
-                p.setDate_planning(event.getNewValue());
-                PlanningService ps = new PlanningService();
-                ps.modifier(p);
+                Date dateSaisie = event.getNewValue();
+                // Obtenir la date actuelle sans l'heure
+                Date dateActuelle = new Date();
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    dateActuelle = sdf.parse(sdf.format(dateActuelle));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                // Comparer si la date saisie dépasse la date actuelle
+                if (dateSaisie.after(dateActuelle)) {
+                    // Si la date saisie est dans le futur, afficher une alerte et ne pas mettre à jour
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Erreur de Validation");
+                    alert.setHeaderText(null);
+                    alert.setContentText("La date ne doit pas dépasser la date actuelle.");
+                    alert.showAndWait();
+
+                    // Rafraîchir la table pour annuler la modification visuelle
+                    tablePlanning.refresh();
+                } else {
+                    // Si la date saisie est valide, mettre à jour la date dans l'objet Planning
+                    p.setDate_planning(dateSaisie);
+                    PlanningService ps = new PlanningService();
+                    ps.modifier(p);
+                }
             }
         });
+
         JourPlanningCell.setCellValueFactory(new PropertyValueFactory<>("jour_planning"));
         JourPlanningCell.setCellFactory(TextFieldTableCell.forTableColumn());
         JourPlanningCell.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Planning, String>>() {
             @Override
             public void handle(TableColumn.CellEditEvent<Planning, String> event) {
                 Planning p = event.getRowValue();
-                p.setJour_planning(event.getNewValue());
-                PlanningService ps = new PlanningService();
-                ps.modifier(p);
+                String jourSaisi = event.getNewValue().trim();
+
+                // Ensemble des jours valides
+                Set<String> joursValides = new HashSet<>(Arrays.asList("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"));
+
+                // Vérifier si le jour saisi est valide
+                if (!joursValides.contains(jourSaisi)) {
+                    // Si le jour saisi n'est pas valide, afficher une alerte et ne pas mettre à jour
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Erreur de Validation");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Veuillez entrer un jour valide (Lundi, Mardi, Mercredi, etc.).");
+                    alert.showAndWait();
+
+                    // Rafraîchir la table pour annuler la modification visuelle
+                    tablePlanning.refresh();
+                } else {
+                    // Si le jour saisi est valide, mettre à jour le jour dans l'objet Planning
+                    p.setJour_planning(jourSaisi);
+                    PlanningService ps = new PlanningService();
+                    ps.modifier(p);
+                }
             }
         });
+
         HeurePlanningCell.setCellValueFactory(new PropertyValueFactory<>("heure_planning"));
         HeurePlanningCell.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         HeurePlanningCell.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Planning, Integer>>() {
@@ -168,11 +210,25 @@ public class ListPlanningController implements Initializable {
             @Override
             public void handle(TableColumn.CellEditEvent<Planning, Integer> event) {
                 Planning p = event.getRowValue();
-                p.setHeure_fin(event.getNewValue());
-                PlanningService ps = new PlanningService();
-                ps.modifier(p);
+                // Récupérer la nouvelle valeur de heure_fin saisie par l'utilisateur
+                int nouvelleHeureFin = event.getNewValue();
+                // Vérifier si la nouvelle heure de fin est supérieure à l'heure de début
+                if (nouvelleHeureFin <= p.getHeure_planning()) {
+                    // Si l'heure de fin est inférieure ou égale à l'heure de début, afficher une alerte et ne pas mettre à jour
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Erreur de Validation");
+                    alert.setHeaderText(null);
+                    alert.setContentText("L'heure de fin doit être supérieure à l'heure de début.");
+                    alert.showAndWait();
+                } else {
+                    // Si la validation est passée, mettre à jour l'heure de fin et procéder à la modification
+                    p.setHeure_fin(nouvelleHeureFin);
+                    PlanningService ps = new PlanningService();
+                    ps.modifier(p);
+                }
             }
         });
+
         tablePlanning.setItems(dataPlanning);
         comboBoxTriPlanning.getItems().addAll("Trier Selon",  "Jour", "Date");
         try {
@@ -181,7 +237,7 @@ public class ListPlanningController implements Initializable {
             Logger.getLogger(ListActiviteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void supprimerPlanning(ActionEvent event) throws SQLException {
         PlanningService ps = new PlanningService();
@@ -252,7 +308,7 @@ public class ListPlanningController implements Initializable {
         } 
 
     }
-    
+
     
     public PlanningService ps = new PlanningService();
     

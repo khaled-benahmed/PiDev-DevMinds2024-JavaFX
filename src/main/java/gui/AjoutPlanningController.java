@@ -27,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Callback;
 import services.ActiviteService;
 import services.PlanningService;
 import com.twilio.Twilio;
@@ -45,7 +46,7 @@ public class AjoutPlanningController implements Initializable {
      */
     @FXML
     private AnchorPane addPlanningPane;
-    
+
     
     @FXML
     void return_ListPlanning()throws IOException{ 
@@ -61,6 +62,7 @@ public class AjoutPlanningController implements Initializable {
             
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        configureDatePicker();
         Map<String, Integer> valuesMap = new HashMap<>();
         for(Activite c : activites){
             textActivitePlanning.getItems().add(c.getNom_activite());
@@ -103,29 +105,49 @@ public class AjoutPlanningController implements Initializable {
     private Button btnClearPlanning;
     @FXML
     private Button btnAddPlanning;
-    
-    
-    
+    @FXML
+
+    private void configureDatePicker() {
+        txtDatePlanning.setDayCellFactory(new Callback<DatePicker, DateCell>() {
+            @Override
+            public DateCell call(final DatePicker datePicker) {
+                return new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate date, boolean empty) {
+                        super.updateItem(date, empty);
+
+                        // Désactiver les dates passées
+                        if (date.isBefore(LocalDate.now())) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;"); // Optionnel : changer le style pour rendre visuellement évident que la date est désactivée
+                        }
+                    }
+                };
+            }
+        });
+    }
+
     @FXML
     private void AjoutPlanning(ActionEvent event) {
         //check if not empty
         if(event.getSource() == btnAddPlanning){
             if (activiteId==-1 || textTitre.getText().isEmpty()|| textHeurefinPlanning.getText().isEmpty() || textHeurePlanning.getValue().isEmpty() || textJourPlanning.getValue().isEmpty() )
-            {    
+            {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Information manquante");
                 alert.setHeaderText(null);
                 alert.setContentText("Vous devez remplir tous les détails concernant votre planning.");
                 Optional<ButtonType> option = alert.showAndWait();
-                
+
             } else {
+
                 ajouterPlanning();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Ajouté avec succès");
                 alert.setHeaderText(null);
                 alert.setContentText("Votre planning a été ajoutée avec succès.");
                 Optional<ButtonType> option = alert.showAndWait();
-                //send_SMS();
+                send_SMS();
                 clearFieldsPlanning();
             }
         }
@@ -133,18 +155,18 @@ public class AjoutPlanningController implements Initializable {
             clearFieldsPlanning();
         }
     }
-    
-    
+
+
     @FXML
     private void clearFieldsPlanning() {
         textTitre.clear();
         textHeurefinPlanning.clear();
         txtDatePlanning.getEditor().clear();
     }
-    
-    
+
+
     private void ajouterPlanning() {
-        
+
          // From Formulaire
         int activitePlanning = activiteId;
         String titrePlanning = textTitre.getText();
@@ -159,7 +181,7 @@ public class AjoutPlanningController implements Initializable {
         }catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         String jourPlanning = textJourPlanning.getValue();
         int heurePlanning = Integer.parseInt(textHeurePlanning.getValue());
         int heure_fin = Integer.parseInt(textHeurefinPlanning.getText());
@@ -169,36 +191,35 @@ public class AjoutPlanningController implements Initializable {
                 activitePlanning, datePlanning, jourPlanning, heurePlanning, heure_fin, titrePlanning); // Include the title when creating a new Planning instance
         PlanningService ps = new PlanningService();
         ps.ajouter(p);
-        
+
     }
+
     
-    
-    
-   /* void send_SMS (){
+    void send_SMS () {
         // Initialisation de la bibliothèque Twilio avec les informations de votre compte
         String ACCOUNT_SID = "";
         String AUTH_TOKEN = "";
-             
+
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-            String recipientNumber = "+216" + txtNumUser.getText();
-            String message = "Bonjour Mr ,\n"
-                    + "Nous sommes ravis de vous informer qu'un planning a été ajouté.\n "
-                    + "Veuillez contactez l'administration pour plus de details.\n "
-                    + "Merci de votre fidélité et à bientôt chez EnergyBox.\n"
-                    + "Cordialement,\n"
-                    + " | CrossFit Center";
-                
-            Message twilioMessage = Message.creator(
-                new PhoneNumber(recipientNumber),
-                new PhoneNumber("+15075163294"),message).create();
-                
-            System.out.println("SMS envoyé : " + twilioMessage.getSid());
-            /*TrayNotificationAlert.notif("Coupon", "Coupon sent successfully.",
-            NotificationType.SUCCESS, AnimationType.POPUP, Duration.millis(2500));
+        String recipientNumber = "+21696419123" /*+ txtNumUser.getText()*/;
+        String message = "Bonjour Mr ,\n"
+                + "Nous sommes ravis de vous informer qu'un planning a été ajouté.\n "
+                + "Veuillez contactez l'administration pour plus de details.\n "
+                + "Merci de votre fidélité et à bientôt chez NutriFit.\n"
+                + "Cordialement,\n"
+                + " | CrossFit Center";
 
-        
+        Message twilioMessage = Message.creator(
+                new PhoneNumber(recipientNumber),
+                new PhoneNumber("+"), message).create();
+
+        System.out.println("SMS envoyé : " + twilioMessage.getSid());
+            /*TrayNotificationAlert.notif("Coupon", "Coupon sent successfully.",
+            NotificationType.SUCCESS, AnimationType.POPUP, Duration.millis(2500));*/
+
+    }
          
-     }*/
+
     
 }

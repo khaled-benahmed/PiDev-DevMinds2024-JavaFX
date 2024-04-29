@@ -107,7 +107,7 @@ public class AjoutActiviteController implements Initializable {
             String extension = selectedImageFile.getName().substring(selectedImageFile.getName().lastIndexOf("."));
             imageName = uniqueID + extension;
 
-            Path destination = Paths.get(System.getProperty("user.dir"), "src/main/resources/", "uploads", imageName);
+            Path destination = Paths.get( "src/main/resources/uploads", imageName);
             Files.copy(selectedImageFile.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
 
         }
@@ -115,24 +115,26 @@ public class AjoutActiviteController implements Initializable {
     
     @FXML
     private void AjoutActivite(ActionEvent event) {
-        //check if not empty
+        //check if not empty and textDureeAct is a number
         if(event.getSource() == btnAddAct){
-            if (textDescriptionAct.getText().isEmpty() || textDiffAct.getItems().isEmpty() || textDureeAct.getText().isEmpty() || textNomAct.getText().isEmpty() || imageName==null)
-            {    
+            // Expression régulière pour vérifier si le texte est un nombre (entier ou décimal)
+            String regexNombre = "^\\d+(\\.\\d+)?$";
+
+            if(textDescriptionAct.getText().isEmpty() || textDiffAct.getItems().isEmpty() || textNomAct.getText().isEmpty() || imageName==null || !textDureeAct.getText().matches(regexNombre)) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Information manquante");
                 alert.setHeaderText(null);
-                alert.setContentText("Vous devez remplir tous les détails concernant votre activité.");
+                alert.setContentText("Vous devez remplir tous les détails concernant votre activité et la durée doit être un nombre.");
                 Optional<ButtonType> option = alert.showAndWait();
-                
-            } else {    
+
+            } else {
                 ajouterActivite();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Ajouté avec succès");
                 alert.setHeaderText(null);
                 alert.setContentText("Votre activité a été ajoutée avec succès.");
                 Optional<ButtonType> option = alert.showAndWait();
-                
+
                 clearFieldsActivite();
             }
         }
@@ -140,8 +142,8 @@ public class AjoutActiviteController implements Initializable {
             clearFieldsActivite();
         }
     }
-    
-    
+
+
     @FXML
     private void clearFieldsActivite() {
         textDescriptionAct.clear();
@@ -149,23 +151,23 @@ public class AjoutActiviteController implements Initializable {
         textNomAct.clear();
         imgActiviteInput.setImage(null);
     }
-    
-    
+
+
     private void ajouterActivite() {
-        
+
          // From Formulaire
         String nomAct = textNomAct.getText();
         String dureeAct = textDureeAct.getText();
         String diffAct = textDiffAct.getValue();
         String imgAct = imageName;
         String descpAct = textDescriptionAct.getText();
-       
-        
+
+
         MyDB db = MyDB.getInstance();
         Activite act = new Activite(
                 nomAct, dureeAct, diffAct, imgAct, descpAct);
         ActiviteService as = new ActiviteService();
         as.ajouter(act);
     }
-    
+
 }

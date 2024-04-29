@@ -89,8 +89,7 @@ public class ListPlanningFrontController implements Initializable {
     @FXML
     private TableView<Planning> tablePlanningVendredi;
     
-    @FXML
-    private Button btnConsulterCours;
+
 
     @FXML
     private Button btnConsulterActivite;
@@ -99,12 +98,7 @@ public class ListPlanningFrontController implements Initializable {
     private AnchorPane listPlanningPane;
     
     
-    @FXML
-    void go_ListCours(ActionEvent event) throws IOException {
-        Parent fxml= FXMLLoader.load(getClass().getResource("/FXML/listCoursFront.fxml"));
-        listPlanningPane.getChildren().removeAll();
-        listPlanningPane.getChildren().setAll(fxml);
-    }
+
 
     @FXML
     void go_ListActivite(ActionEvent event) throws IOException {

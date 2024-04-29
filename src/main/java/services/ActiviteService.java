@@ -50,6 +50,13 @@ public class ActiviteService implements CrudActivite<Activite> {
 
     @Override
     public void modifier(Activite a) {
+        // Vérifier si la durée de l'activité est un nombre
+        String regexNombre = "^\\d+(\\.\\d+)?$";
+        if (!a.getDuree_activite().matches(regexNombre)) {
+            System.err.println("La durée de l'activité doit être un nombre.");
+            return; // Sortie précoce de la méthode si la durée n'est pas un nombre
+        }
+
         try {
             String req = "UPDATE activite SET nom_activite=?, duree_activite=?, difficulte_activite=?, image_activite=?, description_activite=? WHERE activite_id=?";
             PreparedStatement pst = conx.prepareStatement(req);
@@ -66,7 +73,7 @@ public class ActiviteService implements CrudActivite<Activite> {
         }
     }
 
-    
+
 
     @Override
     public List<Activite> Show() {

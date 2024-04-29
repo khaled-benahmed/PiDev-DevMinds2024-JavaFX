@@ -13,7 +13,7 @@
    <children>
       <ImageView fx:id="background" fitHeight="542.0" fitWidth="1233.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../java/images/HJH.png" />
+            <Image url="@../images/HJH.png" />
          </image>
       </ImageView>
       <TableView fx:id="tablePlanningLundi" editable="true" layoutX="41.0" layoutY="394.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="231.0" stylesheets="@../css/listplanning.css">
@@ -52,21 +52,11 @@
             <TableColumn fx:id="Dimanche" prefWidth="155.2000732421875" text="Dimanche" />
          </columns>
       </TableView>
-      <Label layoutX="59.0" layoutY="138.0" text="nos Cours" textFill="#2c234d">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
       <Label layoutX="59.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="NOS SERVICES POUR VOUS" textFill="#f04e3c">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnConsulterCours" layoutX="66.0" layoutY="199.0" mnemonicParsing="false" onAction="#go_ListCours" prefHeight="36.0" prefWidth="193.0" styleClass="bt" stylesheets="@../css/listactivitefront.css" text="Consulter Cours" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="57.0" layoutY="93.0" text="Vous pouvez consulter" textFill="#2c234d">
          <font>
             <Font name="System Bold" size="36.0" />
@@ -74,7 +64,7 @@
       </Label>
       <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../java/images/icons8-go-back-64.png" />
+            <Image url="@../images/icons8-go-back-64.png" />
          </image>
       </ImageView>
       <Button fx:id="btnConsulterActivite" layoutX="972.0" layoutY="199.0" mnemonicParsing="false" onAction="#go_ListActivite" prefHeight="36.0" prefWidth="186.0" styleClass="bt" stylesheets="@../css/listactivitefront.css" text="Consulter Activités" textFill="WHITE">
@@ -82,9 +72,9 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fitHeight="83.0" fitWidth="140.0" layoutX="1001.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="120.0" fitWidth="150.0" layoutX="1001.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../java/images/LogoGymBlack.png" />
+            <Image url="@../images/nutrifit.png" />
          </image>
       </ImageView>
    </children>

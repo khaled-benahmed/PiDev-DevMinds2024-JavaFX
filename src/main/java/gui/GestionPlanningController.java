@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import services.PlanningService;
 
 /**
  * FXML Controller class
@@ -55,7 +56,8 @@ public class GestionPlanningController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        PlanningService ps = new PlanningService();
+
+        ps.deletePastPlannings();    }
     
 }
