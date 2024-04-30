@@ -16,6 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.layout.HBox?>
 <ScrollPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.InscriptionUserController">
     <content>
         <AnchorPane id="AnchorPane" prefHeight="1202.0" prefWidth="1600.0">
@@ -53,19 +54,22 @@
             <VBox layoutX="323.0" layoutY="84.0" prefHeight="422.0" prefWidth="417.0">
                <children>
                   <Label text="Prenom" textFill="WHITE" />
-                      <TextField fx:id="prenomtf" promptText="Prenom" style="-fx-background-color: white; -fx-background-radius: 10;">
+                      <TextField fx:id="prenomtf" promptText="Prenom" style="-fx-background-color: white; -fx-background-radius: 10;" onKeyReleased="#onNomOrPrenomChange">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </TextField>
                   <Label text="Nom" textFill="WHITE" />
-                      <TextField fx:id="nomtf" promptText="Nom" style="-fx-background-color: white; -fx-background-radius: 10;">
+                      <TextField fx:id="nomtf" promptText="Nom" style="-fx-background-color: white; -fx-background-radius: 10;" onKeyReleased="#onNomOrPrenomChange">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </TextField>
                   <Label text="Username" textFill="WHITE" />
-                  <TextField fx:id="usernametf" promptText="Username" style="-fx-background-color: white; -fx-background-radius: 10;" />
+                   <HBox>
+                       <TextField fx:id="usernametf" promptText="Username" style="-fx-background-color: white; -fx-background-radius: 10;" onKeyReleased="#onNomOrPrenomChange" />
+                       <ChoiceBox fx:id="usernameSuggestions" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 10;" />
+                   </HBox>
                   <Label text="E_mail" textFill="WHITE" />
                       <TextField fx:id="emailtf" promptText="E-mail" style="-fx-background-color: white; -fx-background-radius: 10;">
                      <VBox.margin>

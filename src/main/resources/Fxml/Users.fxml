@@ -17,9 +17,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="544.0" prefWidth="982.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.UserController">
+<AnchorPane prefHeight="623.0" prefWidth="1551.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.UserController">
    <children>
-      <VBox layoutX="15.2" layoutY="78.0" prefHeight="449.0" prefWidth="158.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="78.0">
+      <VBox layoutX="15.2" layoutY="78.0" prefHeight="513.0" prefWidth="158.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="78.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
             <TextField fx:id="tFName" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-color: #720000; -fx-border-radius: 10;">
@@ -36,14 +36,15 @@
             <TextField fx:id="tTel" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-color: #720000; -fx-border-radius: 10;" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image" />
             <TextField fx:id="tImage" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-color: #720000; -fx-border-radius: 10;" />
-            <ImageView fx:id="pdp" fitHeight="119.0" fitWidth="158.0" preserveRatio="true">
+
+             <ImageView fx:id="pdp" fitHeight="119.0" fitWidth="158.0" preserveRatio="true">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </ImageView>
          </children>
       </VBox>
-      <TableView fx:id="table" layoutX="203.0" layoutY="87.0" onMouseClicked="#getData" prefHeight="354.0" prefWidth="710.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+      <TableView fx:id="table" layoutX="203.0" layoutY="87.0" onMouseClicked="#getData" prefHeight="366.0" prefWidth="1282.0" style="-fx-background-color: white; -fx-background-radius: 10;">
         <columns>
           <TableColumn fx:id="colid" prefWidth="70.40000915527344" text="ID" />
           <TableColumn fx:id="colfName" prefWidth="95.20001220703125" text="First Name" />
@@ -52,7 +53,11 @@
             <TableColumn fx:id="colEmail" prefWidth="145.5999755859375" text="Email" />
             <TableColumn fx:id="colRole" minWidth="2.4000244140625" prefWidth="74.4000244140625" text="Role" />
             <TableColumn fx:id="colTel" prefWidth="74.4000244140625" text="Telephone" />
-            <TableColumn fx:id="colImage" prefWidth="76.79996337890623" text="Image" />
+            <TableColumn fx:id="colImage" prefWidth="117.60003662109375" text="Image" />
+            <TableColumn fx:id="colBlocked" prefWidth="102.4000244140625" text="Blocked" />
+            <TableColumn fx:id="colBlockedUntil" prefWidth="243.2000732421875" text="Blocked until" />
+            <TableColumn fx:id="colBlockReason" prefWidth="181.5999511718751" text="Block reason" />
+
         </columns>
          <effect>
             <DropShadow blurType="GAUSSIAN" radius="14.68" width="39.72">
@@ -72,6 +77,8 @@
             <Button fx:id="btnUpdate" layoutX="135.0" layoutY="17.0" mnemonicParsing="false" onAction="#updateUser" style="-fx-background-color: white; -fx-background-radius: 10;" text="Update" />
             <Button fx:id="btnDelete" layoutX="48.0" layoutY="17.0" mnemonicParsing="false" onAction="#deleteUser" style="-fx-background-color: white; -fx-background-radius: 10;" text="Delete" />
             <Button fx:id="btnClear" layoutX="31.0" layoutY="17.0" mnemonicParsing="false" onAction="#clearField" style="-fx-background-color: white; -fx-background-radius: 10;" text="Clear" />
+            <Button fx:id="btnBlock" layoutX="135.0" layoutY="17.0" mnemonicParsing="false" onAction="#blockUser" style="-fx-background-color: white; -fx-background-radius: 10;" text="Bloquer" textFill="#df0505" />
+            <Button fx:id="btnUnblock" layoutX="135.0" layoutY="17.0" mnemonicParsing="false" onAction="#unblockUser" style="-fx-background-color: white; -fx-background-radius: 10;" text="Unblock" />
         </buttons>
          <padding>
             <Insets right="20.0" />

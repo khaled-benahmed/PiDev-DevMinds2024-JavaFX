@@ -4,10 +4,10 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.ChangementMdpController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.ChangementMdpController">
     <children>
-        <Button fx:id="valider" layoutX="234.0" layoutY="212.0" mnemonicParsing="false" onAction="#Update_password" prefHeight="25.0" prefWidth="134.0"  text="valider" />
-        <PasswordField fx:id="mdp1" alignment="CENTER" layoutX="182.0" layoutY="77.0" prefHeight="25.0" prefWidth="226.0" promptText="Entrer votre mot de passe" />
-        <PasswordField fx:id="mdp2" alignment="CENTER" layoutX="182.0" layoutY="130.0" prefHeight="25.0" prefWidth="226.0" promptText="Confirmer votre mot de passe" />
+        <Button fx:id="valider" layoutX="234.0" layoutY="212.0" mnemonicParsing="false" onAction="#Update_password" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #720000;" text="valider" textFill="WHITE" />
+        <PasswordField fx:id="mdp1" alignment="CENTER" layoutX="182.0" layoutY="77.0" prefHeight="25.0" prefWidth="226.0" promptText="Entrer votre nouveau mot de passe" style="-fx-background-radius: 20;" />
+        <PasswordField fx:id="mdp2" alignment="CENTER" layoutX="182.0" layoutY="130.0" prefHeight="25.0" prefWidth="226.0" promptText="Confirmer votre mot de passe" style="-fx-background-radius: 20;" />
     </children>
 </AnchorPane>

@@ -26,6 +26,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.scene.control.Alert.AlertType;
@@ -66,6 +68,10 @@ public class UserController implements Initializable {
     private TextField tImage;
     @FXML
     private ImageView pdp;
+    //
+    @FXML
+    private TextField tBlockDuration;
+
 
 
 
@@ -94,8 +100,23 @@ public class UserController implements Initializable {
     @FXML
     private TableColumn<User, String> colImage;
 
+    //
+    @FXML
+    private Button btnUnblock;
+
+    @FXML
+    private Button btnBlock;
+    @FXML
+    private TableColumn<User, Boolean> colBlocked;
+    @FXML
+    private TableColumn<User, String> colBlockReason;
+
     @FXML
     private ImageView goBackBtn;
+    @FXML
+    private TableColumn<User, Date> colBlockedUntil;
+    @FXML
+    private Button btnExportCSV;
 
     @FXML
     private TableView<User> table;
@@ -124,6 +145,10 @@ public class UserController implements Initializable {
                 st.setEmail(rs.getString("Email"));
                 st.setTel(rs.getInt("Tel"));
                 st.setImage(rs.getString("Image"));
+                st.setIs_blocked(rs.getBoolean("is_blocked"));
+                st.setIs_blocked_until(rs.getObject("is_blocked_until", Date.class));
+                st.setBlock_reason(rs.getString("block_reason"));
+
                 users.add(st);
             }
         } catch (SQLException e) {
@@ -131,19 +156,33 @@ public class UserController implements Initializable {
         }
         return users;
     }
-    public void showUsers(){
+    public void showUsers() {
         ObservableList<User> list = getUsers();
         table.setItems(list);
-        colid.setCellValueFactory(new PropertyValueFactory<User,Integer>("id"));
-        colfName.setCellValueFactory(new PropertyValueFactory<User,String >("firstname"));
-        collName.setCellValueFactory(new PropertyValueFactory<User,String >("lastname"));
-        colRole.setCellValueFactory(new PropertyValueFactory<User,String >("role"));
-        colUsername.setCellValueFactory(new PropertyValueFactory<User,String >("username"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<User,String >("email"));
-        colTel.setCellValueFactory(new PropertyValueFactory<User,Integer>("tel"));
-        colImage.setCellValueFactory(new PropertyValueFactory<User,String >("image"));
+        colid.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colfName.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        collName.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
+        colUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colTel.setCellValueFactory(new PropertyValueFactory<>("tel"));
+        colImage.setCellValueFactory(new PropertyValueFactory<>("image"));
+        colBlocked.setCellValueFactory(new PropertyValueFactory<>("is_blocked"));
+        colBlockedUntil.setCellValueFactory(new PropertyValueFactory<>("is_blocked_until"));
+        colBlockReason.setCellValueFactory(new PropertyValueFactory<>("block_reason"));
 
+        // Appliquer le style de ligne
+        table.setRowFactory(tv -> {
+            TableRow<User> row = new TableRow<>();
+            row.itemProperty().addListener((obs, oldUser, newUser) -> {
+                if (newUser != null) {
+                    setRowStyle(row, newUser);
+                }
+            });
+            return row;
+        });
     }
+
 
     @FXML
     void clearField(ActionEvent event) {
@@ -284,6 +323,112 @@ public class UserController implements Initializable {
         }
     }
 
+    @FXML
+    void blockUser(ActionEvent event) {
+        User user = table.getSelectionModel().getSelectedItem();
+        if (user != null) {
+            // Afficher une boîte de dialogue pour choisir la durée de blocage et la raison
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Bloquer l'utilisateur");
+            dialog.setHeaderText(null);
+            dialog.setContentText("Entrez la durée de blocage (en heures) :");
+
+            Optional<String> durationResult = dialog.showAndWait();
+            if (durationResult.isPresent()) {
+                try {
+                    // Récupérer la durée de blocage saisie par l'administrateur
+                    int durationInHours = Integer.parseInt(durationResult.get());
+
+                    // Afficher une nouvelle boîte de dialogue pour saisir la raison du blocage
+                    TextInputDialog reasonDialog = new TextInputDialog();
+                    reasonDialog.setTitle("Bloquer l'utilisateur");
+                    reasonDialog.setHeaderText(null);
+                    reasonDialog.setContentText("Entrez la raison du blocage :");
+
+                    Optional<String> reasonResult = reasonDialog.showAndWait();
+                    if (reasonResult.isPresent()) {
+                        String reason = reasonResult.get();
+
+                        // Calculer la date de fin de blocage
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.add(Calendar.HOUR_OF_DAY, durationInHours);
+                        Date blockedUntil = calendar.getTime();
+
+                        // Mettre à jour l'utilisateur dans la base de données
+                        String updateQuery = "UPDATE user SET is_blocked = true, is_blocked_until = ?, block_reason = ? WHERE id = ?";
+                        con = MyConnection.getInstance().getCnx();
+                        st = con.prepareStatement(updateQuery);
+                        st.setTimestamp(1, new java.sql.Timestamp(blockedUntil.getTime()));
+                        st.setString(2, reason);
+                        st.setInt(3, user.getId());
+                        st.executeUpdate();
+
+                        // Mettre à jour l'objet User
+                        user.setIs_blocked(true);
+                        user.setIs_blocked_until(blockedUntil);
+                        user.setBlock_reason(reason);
+
+                        // Actualiser l'affichage de la table
+                        showUsers();
+                    }
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                } catch (NumberFormatException e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Erreur de saisie");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Veuillez saisir une durée de blocage valide (en heures).");
+                    alert.showAndWait();
+                }
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Aucun utilisateur sélectionné");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez sélectionner un utilisateur à bloquer.");
+            alert.showAndWait();
+        }
+    }
+
+
+    @FXML
+    void unblockUser(ActionEvent event) {
+        User user = table.getSelectionModel().getSelectedItem();
+        if (user != null && user.isIs_blocked()) {
+            Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmation.setTitle("Confirmation de déblocage");
+            confirmation.setHeaderText(null);
+            confirmation.setContentText("Êtes-vous sûr de vouloir débloquer l'utilisateur " + user.getUsername() + " ?");
+
+            Optional<ButtonType> result = confirmation.showAndWait();
+
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                try {
+                    String updateQuery = "UPDATE user SET is_blocked = false, is_blocked_until = NULL, block_reason = NULL WHERE id = ?";
+                    con = MyConnection.getInstance().getCnx();
+                    st = con.prepareStatement(updateQuery);
+                    st.setInt(1, user.getId());
+                    st.executeUpdate();
+
+                    user.setIs_blocked(false);
+                    user.setIs_blocked_until(null);
+                    user.setBlock_reason(null);
+                    showUsers();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Aucun utilisateur sélectionné ou non bloqué");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez sélectionner un utilisateur bloqué à débloquer.");
+            alert.showAndWait();
+        }
+    }
+
+
+
 
     @FXML
     private void goBackHandler(MouseEvent event) {
@@ -300,6 +445,13 @@ public class UserController implements Initializable {
         }
     }
 
+    private void setRowStyle(TableRow<User> row, User user) {
+        if (user.isIs_blocked()) {
+            row.setStyle("-fx-background-color: #ffcdd2;"); // Rouge clair pour les utilisateurs bloqués
+        } else {
+            row.setStyle("-fx-background-color: grey;"); // Blanc pour les utilisateurs non bloqués
+        }
+    }
 
 }
 

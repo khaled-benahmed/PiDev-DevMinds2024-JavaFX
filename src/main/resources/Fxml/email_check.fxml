@@ -8,21 +8,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.email_checkController">
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionutilisateurs.controllers.email_checkController">
     <children>
-        <TextField fx:id="email_check" alignment="CENTER" layoutX="169.0" layoutY="69.0" promptText="votre email" />
-        <Button fx:id="valbtn" layoutX="191.0" layoutY="138.0" mnemonicParsing="false" onAction="#passwrd_reset"  text="valider email" />
-        <ImageView fx:id="goback" fitHeight="50.0" fitWidth="44.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#retour_login">
+        <TextField fx:id="email_check" alignment="CENTER" layoutX="169.0" layoutY="69.0" promptText="Votre email" style="-fx-border-radius: 10; -fx-border-color: #720000; -fx-background-color: white;" />
+        <Button fx:id="valbtn" layoutX="191.0" layoutY="138.0" mnemonicParsing="false" onAction="#passwrd_reset" style="-fx-background-color: #720000; -fx-border-radius: 10;" text="Envoyer le code" textFill="WHITE" />
+        <ImageView fx:id="goback" fitHeight="41.0" fitWidth="45.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#retour_login">
             <image>
                 <Image url="@retour-removebg-preview.png" />
             </image>
         </ImageView>
-        <Text fill="#000000" layoutX="129.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer votre adresse" textAlignment="CENTER" wrappingWidth="259.0">
+        <Text fill="#720000" layoutX="114.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer votre adresse" textAlignment="CENTER" wrappingWidth="259.0">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Text>
-        <Text layoutX="47.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NB: un code de vérification sera envoyé pour modifier votre mot de passe" underline="true" wrappingWidth="407.13671875">
+        <Text fill="#720000" layoutX="47.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NB: un code de vérification sera envoyé pour modifier votre mot de passe" underline="true" wrappingWidth="407.13671875">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>

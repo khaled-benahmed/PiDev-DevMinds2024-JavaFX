@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -49,6 +50,9 @@ public class InscriptionUserController implements Initializable {
     @FXML
     private TextField usernametf;
     @FXML
+    private ChoiceBox<String> usernameSuggestions;
+
+    @FXML
     private Button ajouter;
 
     UserService us= new UserService();
@@ -68,7 +72,7 @@ public class InscriptionUserController implements Initializable {
 
     private List<String> suggestions = new ArrayList<>();
     private void onUsernameClick(MouseEvent event) {
-        generateUsernameSuggestions();
+
     }
 
     @Override
@@ -77,9 +81,10 @@ public class InscriptionUserController implements Initializable {
         choices.getItems().add("Nutritionist");
         choices.getItems().add("simple utilisateur");
         choices.getSelectionModel().select("Coach");
-
         generateUsernameSuggestions();
+
     }
+
 
     @FXML
     private void ajouter(ActionEvent event) throws SQLException {
@@ -263,6 +268,11 @@ public class InscriptionUserController implements Initializable {
         return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
     }
 
+    @FXML
+    private void onNomOrPrenomChange(KeyEvent event) {
+        generateUsernameSuggestions();
+        updateUsernameSuggestions();
+    }
     private void generateUsernameSuggestions() {
         String nom = nomtf.getText().toLowerCase();
         String prenom = prenomtf.getText().toLowerCase();
@@ -274,8 +284,17 @@ public class InscriptionUserController implements Initializable {
         suggestions.add(prenom + "." + nom);
         suggestions.add(nom + prenom);
         suggestions.add(prenom + nom);
+    }
+
+    private void updateUsernameSuggestions() {
+        usernameSuggestions.getItems().clear();
+        usernameSuggestions.getItems().addAll(suggestions);
+    }
 
 
+    @FXML
+    private void onUsernameSuggestionSelected(ActionEvent event) {
+        usernametf.setText(usernameSuggestions.getSelectionModel().getSelectedItem());
     }
 
 

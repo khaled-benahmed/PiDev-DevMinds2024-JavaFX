@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -66,7 +67,14 @@ public class LoginController implements Initializable {
 
         if (rs.next()) {
             String decryptedPassword = AESCrypt.decrypt(rs.getString("PASSWORD"), key); // Call decrypt statically
-            if (decryptedPassword.equals(tpass.getText())) {
+            boolean isBlocked = rs.getBoolean("is_blocked");
+            Date blockedUntil = rs.getObject("is_blocked_until", Date.class);
+            String blockReason = rs.getString("block_reason");
+
+            if (isBlocked && (new Date()).before(blockedUntil)) {
+                // L'utilisateur est bloqué
+                showAlert("Votre compte est bloqué jusqu'au " + blockedUntil + " pour la raison suivante : " + blockReason);
+            } else if (decryptedPassword.equals(tpass.getText())) {
                 UserConnected = new User();
                 UserConnected.setUsername(rs.getString("USERNAME"));
                 UserConnected.setRole(rs.getString("ROLES"));
@@ -76,7 +84,9 @@ public class LoginController implements Initializable {
                 UserConnected.setTel(rs.getInt("TEL"));
                 UserConnected.setImage(rs.getString("IMAGE"));
                 UserConnected.setId(rs.getInt("ID"));
-
+                UserConnected.setIs_blocked(isBlocked);
+                UserConnected.setIs_blocked_until(blockedUntil);
+                UserConnected.setBlock_reason(blockReason);
 
                 FXMLLoader loader;
                 if (UserConnected.getRole().equals("Admin")) {
@@ -96,6 +106,7 @@ public class LoginController implements Initializable {
             showAlert("User not found");
         }
     }
+
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING, message, ButtonType.OK);
