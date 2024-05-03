@@ -107,6 +107,8 @@ public class ReclamationDetailsController {
             r.setDateReponse(java.time.LocalDate.now());
             try {
                 this.serviceReponse.add(r);
+                this.reclamation.setEtat("Traitee");
+                this.serviceReclamation.update(this.reclamation);
                 a.setAlertType(Alert.AlertType.INFORMATION);
                 a.setTitle("Success");
                 a.setContentText("Response added successfully");

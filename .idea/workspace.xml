@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bbb3fc41-5dea-45e5-9167-75e8173d658d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0d41a34bb3b624da1ba1f78dadfe09ef0a74fbf4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2bbd05b5e52227fb636b26e2ac241d2429bd34a1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/e/3ef03aedf317aa1f30503c3a1100ade73b61a4ce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/44a12ae72079153ea94b1df07b387532e1b3ee4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49608b8635e383415d513035a19c310adcba130f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7cc9bdc7982934d18fbf3921ab703d8a5e04fc00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b33584e1b53d8fc7485ae740ae1ef9744559d028" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b837d5ec4c976468c1c2bf8518ab63c245a5966b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c1c51c109ec68b6641aa23251aabf5381ce58379" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c21cccdd2c1293e6c9d1d911a1b24243ff42b5de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c66e8c6fc8e5817c3488cc7cf261026d421c1836" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/d/0d41a34bb3b624da1ba1f78dadfe09ef0a74fbf4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/b/2bbd05b5e52227fb636b26e2ac241d2429bd34a1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/e/3ef03aedf317aa1f30503c3a1100ade73b61a4ce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/44a12ae72079153ea94b1df07b387532e1b3ee4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/9/49608b8635e383415d513035a19c310adcba130f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/c/7cc9bdc7982934d18fbf3921ab703d8a5e04fc00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/3/b33584e1b53d8fc7485ae740ae1ef9744559d028" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b837d5ec4c976468c1c2bf8518ab63c245a5966b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/1/c1c51c109ec68b6641aa23251aabf5381ce58379" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/2/c21cccdd2c1293e6c9d1d911a1b24243ff42b5de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/6/c66e8c6fc8e5817c3488cc7cf261026d421c1836" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2daPi05veFIFJF0dhSj2JsdnBC4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GestionReclamation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nour/OneDrive/Bureau/metiers nour/nour&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nour\OneDrive\Bureau\nour\src\main\resources\public\images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bbb3fc41-5dea-45e5-9167-75e8173d658d" name="Changes" comment="" />
+      <created>1710243339490</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710243339490</updated>
+      <workItem from="1710243340522" duration="4969000" />
+      <workItem from="1710249326063" duration="1074000" />
+      <workItem from="1710274036657" duration="2364000" />
+      <workItem from="1710276566896" duration="2076000" />
+      <workItem from="1710808562722" duration="338000" />
+      <workItem from="1711911867966" duration="301000" />
+      <workItem from="1711915078390" duration="37000" />
+      <workItem from="1711922031736" duration="774000" />
+      <workItem from="1711926120658" duration="6000" />
+      <workItem from="1711926137240" duration="10000" />
+      <workItem from="1711940707971" duration="41000" />
+      <workItem from="1711940813677" duration="258000" />
+      <workItem from="1711941376094" duration="621000" />
+      <workItem from="1711942117139" duration="41000" />
+      <workItem from="1711974634011" duration="214000" />
+      <workItem from="1712057734690" duration="28000" />
+      <workItem from="1712063367171" duration="4000" />
+      <workItem from="1712867447186" duration="516000" />
+      <workItem from="1713253498797" duration="2747000" />
+      <workItem from="1713267382175" duration="558000" />
+      <workItem from="1713268314014" duration="546000" />
+      <workItem from="1713270801037" duration="883000" />
+      <workItem from="1713271802249" duration="157000" />
+      <workItem from="1713272048671" duration="3360000" />
+      <workItem from="1713542727325" duration="2000" />
+      <workItem from="1713543161642" duration="535000" />
+      <workItem from="1713817865122" duration="1564000" />
+      <workItem from="1713819442221" duration="675000" />
+      <workItem from="1713875150456" duration="1681000" />
+      <workItem from="1714150660167" duration="1604000" />
+      <workItem from="1714155605385" duration="142000" />
+      <workItem from="1714155786953" duration="6277000" />
+      <workItem from="1714308871579" duration="11662000" />
+      <workItem from="1714342280317" duration="2730000" />
+      <workItem from="1714402972148" duration="599000" />
+      <workItem from="1714480292763" duration="435000" />
+      <workItem from="1714757627201" duration="1860000" />
+      <workItem from="1714759813081" duration="117000" />
+      <workItem from="1714759950779" duration="80000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

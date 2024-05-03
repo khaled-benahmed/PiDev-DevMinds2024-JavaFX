@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackOffice.ReclamationDetailsController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackOffice.ReclamationDetailsController">
    <children>
-      <Label layoutX="299.0" prefHeight="200.0" prefWidth="403.0" text="Reclamation Details" textAlignment="CENTER">
+      <Label layoutX="299.0" prefHeight="200.0" prefWidth="403.0" text="Reclamation Details" textAlignment="CENTER" textFill="#720000">
          <font>
             <Font name="System Bold" size="42.0" />
          </font>
@@ -18,14 +18,23 @@
       <TextArea fx:id="tfDesc" editable="false" layoutX="344.0" layoutY="280.0" prefHeight="200.0" prefWidth="420.0" />
       <TextField fx:id="tfName" editable="false" layoutX="344.0" layoutY="200.0" />
       <DatePicker fx:id="tfDate" editable="false" layoutX="344.0" layoutY="504.0" />
-      <Label layoutX="203.0" layoutY="202.0" text="User name" />
-      <Label layoutX="200.0" layoutY="280.0" text="Description" />
-      <Label layoutX="222.0" layoutY="509.0" text="Date" />
-      <Button fx:id="BtnBack" layoutX="850.0" layoutY="559.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="31.0" prefWidth="107.0" text="Back" />
-      <Button fx:id="BtnRespond" layoutX="501.0" layoutY="559.0" mnemonicParsing="false" onAction="#Repondre" prefHeight="31.0" prefWidth="107.0" text="Respond" />
-      <Button fx:id="BtnDelete" layoutX="850.0" layoutY="494.0" mnemonicParsing="false" onAction="#OnDeleteClicked" prefHeight="31.0" prefWidth="107.0" styleClass="delete-button" text="Delete" />
+      <Label layoutX="203.0" layoutY="202.0" text="Nom" textFill="#720000">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="200.0" layoutY="280.0" text="Description" textFill="#720000">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="222.0" layoutY="509.0" text="Date" textFill="#720000">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="BtnBack" layoutX="850.0" layoutY="559.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="31.0" prefWidth="107.0" text="Retour" />
+      <Button fx:id="BtnRespond" layoutX="501.0" layoutY="559.0" mnemonicParsing="false" onAction="#Repondre" prefHeight="31.0" prefWidth="107.0" text="Repondre" />
+      <Button fx:id="BtnDelete" layoutX="849.0" layoutY="733.0" mnemonicParsing="false" onAction="#OnDeleteClicked" prefHeight="31.0" prefWidth="107.0" styleClass="delete-button" text="Supprimer" />
       <TextArea fx:id="tfReponse" layoutX="398.0" layoutY="604.0" prefHeight="118.0" prefWidth="336.0" />
-      <Button fx:id="BtnSubmit" layoutX="513.0" layoutY="733.0" mnemonicParsing="false" onAction="#OnSubmitClicked" prefHeight="31.0" prefWidth="107.0" text="Submit" />
+      <Button fx:id="BtnSubmit" layoutX="513.0" layoutY="733.0" mnemonicParsing="false" onAction="#OnSubmitClicked" prefHeight="31.0" prefWidth="107.0" text="Envoyer" />
       <Button fx:id="BtnVoirRep" layoutX="636.0" layoutY="559.0" mnemonicParsing="false" onAction="#GoReponses" prefHeight="31.0" prefWidth="141.0" text="Voir Reponses" />
    </children>
 </AnchorPane>

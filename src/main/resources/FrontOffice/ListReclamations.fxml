@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -15,9 +16,9 @@
    <children>
       <VBox alignment="CENTER" layoutX="597.0" layoutY="206.0" prefHeight="388.0" prefWidth="334.0">
          <children>
-            <Label fx:id="labelTiltle" prefHeight="57.0" prefWidth="106.0" text="Nom Utilisateur" />
+            <Label fx:id="labelTiltle" prefHeight="57.0" prefWidth="106.0" text="Nom Utilisateur" textFill="#720000" />
             <TextField fx:id="tf_nom" />
-            <Label fx:id="labelTiltle1" prefHeight="58.0" prefWidth="62.0" text="Contenu" />
+            <Label fx:id="labelTiltle1" prefHeight="58.0" prefWidth="62.0" text="Contenu" textFill="#720000" />
             <TextArea fx:id="tf_contenu" prefHeight="200.0" prefWidth="305.0" />
             <Button fx:id="BtnAjouter" mnemonicParsing="false" onAction="#OnAjouterClicked" prefHeight="45.0" prefWidth="133.0" styleClass="add-button" text="Ajouter" />
             <HBox fx:id="HboxModif" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" visible="false">
@@ -30,16 +31,19 @@
       </VBox>
       <ScrollPane fx:id="scrollPane" layoutX="26.0" layoutY="92.0" prefHeight="426.0" prefWidth="543.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="541.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="541.0">
+               <effect>
+                  <Glow />
+               </effect></AnchorPane>
         </content>
       </ScrollPane>
       <ListView fx:id="ListViewReponses" layoutX="114.0" layoutY="594.0" prefHeight="185.0" prefWidth="347.0" />
-      <Label layoutX="51.0" layoutY="14.0" prefHeight="78.0" prefWidth="518.0" text="Mes reclamations">
+      <Label layoutX="51.0" layoutY="14.0" prefHeight="78.0" prefWidth="518.0" text="Mes reclamations" textFill="#720000">
          <font>
             <Font name="System Bold" size="53.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="555.0" text="Reponses">
+      <Label layoutX="114.0" layoutY="555.0" text="Reponses" textFill="#720000">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>

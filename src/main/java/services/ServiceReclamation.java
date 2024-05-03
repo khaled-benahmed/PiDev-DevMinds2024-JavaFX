@@ -17,13 +17,14 @@ public class ServiceReclamation implements IService<Reclamation> {
 
     @Override
     public void add(Reclamation reclamation) throws SQLException {
-        String sql = "insert into reclamation (nom_user_reclamation,text_reclamation,date_reclamation,id_user) VALUES (?,?,?,?)";
+        String sql = "insert into reclamation (nom_user_reclamation,text_reclamation,etat ,date_reclamation,id_user) VALUES (?,?,?,?,?)";
         System.out.println(sql);
         PreparedStatement pst = connection.prepareStatement(sql);
         pst.setString(1, reclamation.getNomUser());
         pst.setString(2, reclamation.getTextReclamation());
-        pst.setDate(3, Date.valueOf(reclamation.getDateReclamation()));
-        pst.setInt(4, reclamation.getIdUser());
+        pst.setString(3, "En attente");
+        pst.setDate(4, Date.valueOf(reclamation.getDateReclamation()));
+        pst.setInt(5, reclamation.getIdUser());
         pst.executeUpdate();
         System.out.println("Reclamation added");
     }
@@ -31,13 +32,14 @@ public class ServiceReclamation implements IService<Reclamation> {
     @Override
     public void update(Reclamation reclamation) throws SQLException {
 
-        String sql = "update reclamation set nom_user_reclamation = ?,  text_reclamation = ? , date_reclamation = ? , id_user = ?  where id = ?";
+        String sql = "update reclamation set nom_user_reclamation = ?,  text_reclamation = ? , etat = ? , date_reclamation = ? , id_user = ?  where id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, reclamation.getNomUser());
         preparedStatement.setString(2, reclamation.getTextReclamation());
-        preparedStatement.setDate(3, Date.valueOf(reclamation.getDateReclamation()));
-        preparedStatement.setInt(4, reclamation.getIdUser());
-        preparedStatement.setInt(5, reclamation.getId());
+        preparedStatement.setString(3, reclamation.getEtat());
+        preparedStatement.setDate(4, Date.valueOf(reclamation.getDateReclamation()));
+        preparedStatement.setInt(5, reclamation.getIdUser());
+        preparedStatement.setInt(6, reclamation.getId());
         preparedStatement.executeUpdate();
         System.out.println("Reclamation with id = " + reclamation.getId() + " updated");
 
@@ -62,6 +64,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             Reclamation rec = new Reclamation();
             rec.setId(rs.getInt("id"));
             rec.setDateReclamation(rs.getDate("date_reclamation").toLocalDate());
+            rec.setEtat(rs.getString("etat"));
             rec.setNomUser(rs.getString("nom_user_reclamation"));
             rec.setIdUser(rs.getInt("id_user"));
             rec.setTextReclamation(rs.getString("text_reclamation"));
@@ -82,6 +85,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             rec.setId(rs.getInt("id"));
             rec.setDateReclamation(rs.getDate("date_reclamation").toLocalDate());
             rec.setNomUser(rs.getString("nom_user_reclamation"));
+            rec.setEtat(rs.getString("etat"));
             rec.setIdUser(rs.getInt("id_user"));
             rec.setTextReclamation(rs.getString("text_reclamation"));
             System.out.println("Reclamation with id = " + id + " found");
@@ -103,6 +107,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             rec.setId(rs.getInt("id"));
             rec.setDateReclamation(rs.getDate("date_reclamation").toLocalDate());
             rec.setNomUser(rs.getString("nom_user_reclamation"));
+            rec.setEtat(rs.getString("etat"));
             rec.setIdUser(rs.getInt("id_user"));
             rec.setTextReclamation(rs.getString("text_reclamation"));
 

@@ -1,5 +1,6 @@
 package controllers.FrontOffice;
 
+import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -10,14 +11,16 @@ import models.Reponse;
 import services.ServiceReclamation;
 import services.ServiceReponse;
 
+import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
-import java.sql.Date;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ListReclamationFrontController implements Initializable {
     @javafx.fxml.FXML
@@ -49,7 +52,7 @@ public class ListReclamationFrontController implements Initializable {
 
 
     @javafx.fxml.FXML
-    public void OnAjouterClicked(ActionEvent actionEvent) throws SQLException {
+    public void OnAjouterClicked(ActionEvent actionEvent) throws SQLException, IOException, InterruptedException {
         Alert a = new Alert(Alert.AlertType.WARNING);
         if (tf_nom.getText().isEmpty() || tf_contenu.getText().isEmpty()) {
             a.setContentText("Veuillez remplir tous les champs");
@@ -66,6 +69,17 @@ public class ListReclamationFrontController implements Initializable {
         }
 
         else {
+            String result = CheckProfanity(tf_contenu.getText());
+            Gson gson = new Gson();
+            Map<String, Object> data = gson.fromJson(result, Map.class);
+            String censoredContent = (String) data.get("censored-content");
+            boolean isBad = (boolean) data.get("is-bad");
+            List<String> badWordsList = (List<String>) data.get("bad-words-list");
+            Double badWordsTotal = (Double) data.get("bad-words-total");
+            System.out.println("Censored content: " + censoredContent);
+            System.out.println("Is bad: " + isBad);
+            System.out.println("Bad words list: " + badWordsList);
+            System.out.println("Bad words total: " + badWordsTotal);
             Reclamation r = new Reclamation(tf_nom.getText(), tf_contenu.getText(), LocalDate.now(),1);
             boolean exist = false ;
             List<Reclamation> lr = this.serviceReclamation.getAll();
@@ -73,6 +87,13 @@ public class ListReclamationFrontController implements Initializable {
                 if (re.equals(r)) {
                     exist = true;
                 }
+            }
+            if (isBad)
+            {
+                a.setAlertType(Alert.AlertType.WARNING);
+                a.setContentText("le contenu contient " + badWordsTotal + " mots inappropriés !");
+                a.show();
+                return;
             }
             if (!exist) {
                 try {
@@ -218,5 +239,18 @@ public class ListReclamationFrontController implements Initializable {
         tf_contenu.clear();
         HboxModif.setVisible(false);
         BtnAjouter.setVisible(true);
+    }
+
+    public String CheckProfanity(String text) throws IOException, InterruptedException {
+        String encodedText = URLEncoder.encode(text, "UTF-8");
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://neutrinoapi-bad-word-filter.p.rapidapi.com/bad-word-filter"))
+                .header("content-type", "application/x-www-form-urlencoded")
+                .header("X-RapidAPI-Key", "3a411f7ffcmsh7b97d0bc1ea2475p1661f7jsnf518042e562a")
+                .header("X-RapidAPI-Host", "neutrinoapi-bad-word-filter.p.rapidapi.com")
+                .method("POST", HttpRequest.BodyPublishers.ofString("content=" + encodedText + "&censor-character=*"))
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
     }
 }

@@ -8,7 +8,7 @@ public class Reclamation {
     int id ;
     String nomUser ;
     String textReclamation;
-
+    String etat  ;
     LocalDate dateReclamation;
 
     int idUser ;
@@ -27,6 +27,15 @@ public class Reclamation {
     public Reclamation(String nomUser, String textReclamation, LocalDate dateReclamation, int idUser) {
         this.nomUser = nomUser;
         this.textReclamation = textReclamation;
+        this.dateReclamation = dateReclamation;
+        this.idUser = idUser;
+    }
+
+    public Reclamation(int id, String nomUser, String textReclamation, String etat, LocalDate dateReclamation, int idUser) {
+        this.id = id;
+        this.nomUser = nomUser;
+        this.textReclamation = textReclamation;
+        this.etat = etat;
         this.dateReclamation = dateReclamation;
         this.idUser = idUser;
     }
@@ -69,6 +78,14 @@ public class Reclamation {
 
     public void setIdUser(int idUser) {
         this.idUser = idUser;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
     @Override
