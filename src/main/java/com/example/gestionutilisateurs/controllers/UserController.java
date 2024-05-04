@@ -1,8 +1,11 @@
 package com.example.gestionutilisateurs.controllers;
 
 
+import com.example.gestionutilisateurs.App;
 import com.example.gestionutilisateurs.entities.User;
 import com.example.gestionutilisateurs.tools.MyConnection;
+import javafx.application.HostServices;
+import javafx.application.Preloader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,20 +20,26 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 import javafx.scene.control.Alert.AlertType;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 
 public class UserController implements Initializable {
@@ -121,10 +130,24 @@ public class UserController implements Initializable {
     @FXML
     private TableView<User> table;
     int id =0;
+    @FXML
+    private TextField searchField;
+    @FXML
+    private ChoiceBox<String> filterChoice;
+    @FXML
+    private Button searchButton;
+    @FXML
+    private Button sortButton;
+
+
+    private List<User> filteredUsers;
+    private Comparator<User> userComparator;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showUsers();
+        initializeFilterChoice();
+        initializeUserComparator();
 
     }
     //observableList
@@ -452,6 +475,124 @@ public class UserController implements Initializable {
             row.setStyle("-fx-background-color: grey;"); // Blanc pour les utilisateurs non bloqués
         }
     }
+
+
+    /////
+
+    private void initializeFilterChoice() {
+        filterChoice.getItems().addAll("Tous", "Bloqués", "Non bloqués");
+        filterChoice.getSelectionModel().selectFirst();
+        filterChoice.setOnAction(event -> handleSearch());
+    }
+
+    private void initializeUserComparator() {
+        userComparator = Comparator.comparing(User::getFirstname)
+                .thenComparing(User::getLastname)
+                .thenComparing(User::getUsername);
+    }
+
+    @FXML
+    private void handleSearch() {
+        String searchText = searchField.getText().toLowerCase();
+        String filterValue = filterChoice.getSelectionModel().getSelectedItem();
+
+        filteredUsers = getUsers().stream()
+                .filter(user -> {
+                    boolean matchesSearch = user.getFirstname().toLowerCase().contains(searchText)
+                            || user.getLastname().toLowerCase().contains(searchText)
+                            || user.getUsername().toLowerCase().contains(searchText)
+                            || user.getEmail().toLowerCase().contains(searchText);
+                    boolean matchesFilter = filterValue.equals("Tous") || (filterValue.equals("Bloqués") && user.isIs_blocked())
+                            || (filterValue.equals("Non bloqués") && !user.isIs_blocked());
+                    return matchesSearch && matchesFilter;
+                })
+                .collect(Collectors.toList());
+
+        updateTableView();
+    }
+
+    @FXML
+    private void handleSort() {
+        filteredUsers.sort(userComparator);
+        updateTableView();
+    }
+
+    private void updateTableView() {
+        table.setItems(FXCollections.observableArrayList(filteredUsers));
+    }
+    @FXML
+    private void exportToCSV(ActionEvent event) {
+        try {
+            // Récupérer les données des utilisateurs
+            ObservableList<User> users = getUsers();
+            System.out.println("Nombre d'utilisateurs : " + users.size());
+
+            // Construire le contenu du fichier CSV
+            StringBuilder csvContent = new StringBuilder();
+            csvContent.append("ID,Prénom,Nom,Rôle,Nom d'utilisateur,E-mail,Téléphone,Image,Bloqué,Bloqué jusqu'au,Raison du blocage\n");
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            for (User user : users) {
+                csvContent.append(String.format("%d,%s,%s,%s,%s,%s,%d,%s,%b,%s,%s\n",
+                        user.getId(),
+                        user.getFirstname(),
+                        user.getLastname(),
+                        user.getRole(),
+                        user.getUsername(),
+                        user.getEmail(),
+                        user.getTel(),
+                        user.getImage(),
+                        user.isIs_blocked(),
+                        user.getIs_blocked_until() != null ? dateFormat.format(user.getIs_blocked_until()) : "",
+                        user.getBlock_reason() != null ? user.getBlock_reason() : ""));
+            }
+
+            // Récupérer le nom de fichier
+            String fileName = "utilisateurs.csv";
+
+            // Créer le dossier "liste_des_utilisateurs" sur le bureau
+            File userDirectory = new File(System.getProperty("user.home"), "Desktop/liste_des_utilisateurs");
+            if (!userDirectory.exists()) {
+                userDirectory.mkdirs();
+            }
+
+            // Créer le fichier CSV dans le dossier "liste_des_utilisateurs"
+            File csvFile = new File(userDirectory, fileName);
+            System.out.println("Fichier CSV créé : " + csvFile.getAbsolutePath());
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
+                writer.write(csvContent.toString());
+                System.out.println("Contenu du fichier CSV écrit avec succès.");
+            }
+
+            // Ouvrir le fichier dans le navigateur
+            System.out.println("Ouverture du fichier dans le navigateur...");
+            getHostServices().showDocument(csvFile.toURI().toString());
+            System.out.println("Fichier ouvert dans le navigateur.");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Exportation CSV");
+            alert.setHeaderText(null);
+            alert.setContentText("Les données des utilisateurs ont été exportées avec succès.");
+            alert.showAndWait();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur d'exportation");
+            alert.setHeaderText(null);
+            alert.setContentText("Une erreur est survenue lors de l'exportation des données : " + e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    private HostServices getHostServices() {
+        try {
+            return App.class.getConstructor().newInstance().getHostServices();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
 }
 

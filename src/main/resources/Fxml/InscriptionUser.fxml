@@ -68,7 +68,7 @@
                   <Label text="Username" textFill="WHITE" />
                    <HBox>
                        <TextField fx:id="usernametf" promptText="Username" style="-fx-background-color: white; -fx-background-radius: 10;" onKeyReleased="#onNomOrPrenomChange" />
-                       <ChoiceBox fx:id="usernameSuggestions" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 10;" />
+                       <ChoiceBox fx:id="usernameSuggestions" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 10;" onAction="#onUsernameSuggestionSelected" />
                    </HBox>
                   <Label text="E_mail" textFill="WHITE" />
                       <TextField fx:id="emailtf" promptText="E-mail" style="-fx-background-color: white; -fx-background-radius: 10;">

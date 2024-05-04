@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,7 +28,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import com.example.gestionutilisateurs.entities.AESCrypt;
 import com.example.gestionutilisateurs.services.UserService;
 
 
@@ -89,9 +87,23 @@ public class InscriptionUserController implements Initializable {
     @FXML
     private void ajouter(ActionEvent event) throws SQLException {
 
-        String email=emailtf.getText();
-        String tel= teltf.getText();
+        String nom = nomtf.getText();
+        String prenom = prenomtf.getText();
+        String email = emailtf.getText();
+        String tel = teltf.getText();
+        String mdp = mdptf.getText();
         String username = usernametf.getText();
+        String role = choices.getValue();
+        String imageData = this.imageData;
+
+        if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || tel.isEmpty() || mdp.isEmpty() || username.isEmpty() || role == null || imageData == null) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez remplir tous les champs.");
+            alert.show();
+            return;
+        }
 
         if (us.existUsername(username)) {
             Alert alert = new Alert(AlertType.INFORMATION);
@@ -294,8 +306,10 @@ public class InscriptionUserController implements Initializable {
 
     @FXML
     private void onUsernameSuggestionSelected(ActionEvent event) {
-        usernametf.setText(usernameSuggestions.getSelectionModel().getSelectedItem());
+        String selectedUsername = usernameSuggestions.getSelectionModel().getSelectedItem();
+        usernametf.setText(selectedUsername);
     }
+
 
 
 }

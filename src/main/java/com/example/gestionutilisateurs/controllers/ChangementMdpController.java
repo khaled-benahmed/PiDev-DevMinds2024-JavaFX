@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import com.example.gestionutilisateurs.services.UserService;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,37 +45,67 @@ public class ChangementMdpController implements Initializable {
 
     @FXML
     private void Update_password(ActionEvent event) throws Exception {
-        if(mdp1.getText().equals(mdp2.getText())){
-            us.ModifMDP(email2, CryptVar.encrypt(mdp1.getText(),key));
+        String newPassword = mdp1.getText();
+        String confirmPassword = mdp2.getText();
 
+        if (newPassword.equals(confirmPassword)) {
+            if (isPasswordComplex(newPassword)) {
+                us.ModifMDP(email2, CryptVar.encrypt(newPassword, key));
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("mot de passe");
-            alert.setHeaderText(null);
-            alert.setContentText("votre mot de passe a été changé avec succés");
-            alert.show();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mot de passe");
+                alert.setHeaderText(null);
+                alert.setContentText("Votre mot de passe a été changé avec succès.");
+                alert.show();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
-            Parent root = loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+                Parent root = loader.load();
 
-
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setTitle("Login");
-            stage.setScene(scene);
-            stage.show();
-        }
-
-        else {
-
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("Login");
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Mot de passe");
+                alert.setHeaderText(null);
+                alert.setContentText("Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.");
+                alert.show();
+            }
+        } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("mot de passe");
+            alert.setTitle("Mot de passe");
             alert.setHeaderText(null);
-            alert.setContentText("champ vide ou les mot de passe ne sont pas identiques");
+            alert.setContentText("Les mots de passe ne sont pas identiques.");
             alert.show();
         }
     }
+    private boolean isPasswordComplex(String password) {
+        // Vérifier si le mot de passe a au moins 8 caractères
+        if (password.length() < 8) {
+            return false;
+        }
 
+        // Vérifier s'il contient au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial
+        boolean hasUpperCase = false;
+        boolean hasLowerCase = false;
+        boolean hasDigit = false;
+        boolean hasSpecialChar = false;
 
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                hasUpperCase = true;
+            } else if (Character.isLowerCase(c)) {
+                hasLowerCase = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            } else if (!Character.isLetterOrDigit(c)) {
+                hasSpecialChar = true;
+            }
+        }
+
+        return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+    }
 
 }
